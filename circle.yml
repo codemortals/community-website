@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   build:
     docker:
@@ -7,6 +8,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
+
 workflows:
   version: 2
   build:
