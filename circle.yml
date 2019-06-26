@@ -8,8 +8,8 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
-      - run: npx firebase use --token $FIREBASE_TOKEN $TARGET_ENVIRONMENT
-      - run: npx firebase deploy --token $FIREBASE_TOKEN
+      - run: npx firebase use --token $FIREBASE_KEY $TARGET_ENVIRONMENT
+      - run: npx firebase deploy --token $FIREBASE_KEY
 
 workflows:
   version: 2
