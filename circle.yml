@@ -1,7 +1,15 @@
 version: 2
 
 jobs:
-  build-deploy:
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+
+  deploy:
     docker:
       - image: circleci/node:10
     steps:
@@ -15,4 +23,10 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build-deploy
+      - build
+      - deploy
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
