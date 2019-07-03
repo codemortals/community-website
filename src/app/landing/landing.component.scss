@@ -1,20 +1,30 @@
 section {
     display: flex;
+    flex-direction: column;
     margin: 2em 0;
 
-    &:nth-of-type(even) {
-        flex-direction: row-reverse;
-
-        img {
-            margin-left: 2em;
-        }
+    .mascot {
+        text-align: center;
     }
+}
 
-    &:nth-of-type(odd) {
-        flex-direction: row;
 
-        img {
-            margin-right: 2em;
+@media all and (min-width: 420px) {
+    section {
+        &:nth-of-type(even) {
+            flex-direction: row-reverse;
+
+            img {
+                margin-left: 2em;
+            }
+        }
+
+        &:nth-of-type(odd) {
+            flex-direction: row;
+
+            img {
+                margin-right: 2em;
+            }
         }
     }
 }
