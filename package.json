@@ -2,12 +2,19 @@
     "name": "codemortals",
     "version": "0.0.0",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve",
         "build": "ng build",
-        "lint": "ng lint"
+        "lint": "ng lint",
+        "start": "ng serve",
+        "start:test": "serve -s -p 8080 dist",
+        "test": "npm run lint && npm run build && concurrently -r -k -s first \"npm run start:test\" \"npm run cypress:run\"",
+        "cypress:run": "cypress run",
+        "cypress:open": "cypress open"
     },
     "private": true,
+    "cypress-cucumber-preprocessor": {
+        "commonPath": "common",
+        "step_definitions": "test/step_definitions"
+    },
     "dependencies": {
         "@angular/animations": "8.0.3",
         "@angular/common": "8.0.3",
@@ -33,7 +40,11 @@
         "@angular/language-service": "8.0.3",
         "@types/node": "12.0.10",
         "codelyzer": "5.1.0",
+        "concurrently": "4.1.1",
+        "cypress": "3.3.2",
+        "cypress-cucumber-preprocessor": "1.12.0",
         "firebase-tools": "7.0.2",
+        "serve": "11.0.2",
         "ts-node": "8.3.0",
         "tslint": "5.18.0",
         "typescript": "3.4.5"
