@@ -10,6 +10,9 @@ import {
     faTwitter,
     faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import {
+    faCheck
+} from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
@@ -32,6 +35,7 @@ import { RoutingModule } from './routing.module';
 export class AppModule {
     constructor() {
         library.add(
+            faCheck,
             faFacebook,
             faInstagram,
             faTwitter,
