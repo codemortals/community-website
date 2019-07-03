@@ -8,6 +8,11 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test
+      - store_artifacts:
+          path: test/videos
+      - store_artifacts:
+          path: test/screenshots
+
 
   deploy:
     docker:
