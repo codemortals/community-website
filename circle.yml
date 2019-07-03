@@ -23,10 +23,10 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
+      - test
       - deploy:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: master
