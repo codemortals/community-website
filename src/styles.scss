@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     font-size: 20px;
     font-weight: 300;
-    color: #444444;
+    color: #322e2d;
     font-family: 'Lato', sans-serif;
     background-color: lighten(#673ab7, 50);
 }
@@ -17,13 +17,11 @@ h1 {
     line-height: 1.2em;
 }
 
-
 h2 {
     font-size: 1.6em;
     font-weight: 500;
     line-height: 1.2em;
 }
-
 
 h3 {
     font-size: 1.4em;
@@ -31,9 +29,17 @@ h3 {
     line-height: 1.2em;
 }
 
-
 h4 {
     font-size: 1.2em;
     font-weight: 700;
     line-height: 1.2em;
+}
+
+a {
+    font-weight: 500;
+    color: #009eaf;
+
+    &:hover {
+        color: #00b8cc;
+    }
 }
