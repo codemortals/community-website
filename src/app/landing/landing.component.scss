@@ -1,0 +1,20 @@
+section {
+    display: flex;
+    margin: 2em 0;
+
+    &:nth-of-type(even) {
+        flex-direction: row-reverse;
+
+        img {
+            margin-left: 2em;
+        }
+    }
+
+    &:nth-of-type(odd) {
+        flex-direction: row;
+
+        img {
+            margin-right: 2em;
+        }
+    }
+}
