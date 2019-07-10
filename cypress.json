@@ -1,0 +1,11 @@
+{
+    "baseUrl": "http://localhost:8080",
+    "ignoreTestFiles": "*.js",
+    "integrationFolder": "test/integration",
+    "pluginsFile": "test/plugins",
+    "screenshotsFolder": "test/screenshots",
+    "supportFile": "test/support",
+    "videosFolder": "test/videos",
+    "viewportWidth": 1920,
+    "viewportHeight": 1080
+}
