@@ -11,11 +11,17 @@ import {
     faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-    faCheck
+    faChalkboardTeacher,
+    faCheck,
+    faExternalLinkAlt,
+    faLaptop,
+    faHeartbeat,
+    faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 import { RoutingModule } from './routing.module';
 
@@ -23,6 +29,7 @@ import { RoutingModule } from './routing.module';
     declarations: [
         AppComponent,
         LandingComponent,
+        ScheduleComponent,
     ],
     imports: [
         BrowserModule,
@@ -35,7 +42,12 @@ import { RoutingModule } from './routing.module';
 export class AppModule {
     constructor() {
         library.add(
+            faChalkboardTeacher,
             faCheck,
+            faExternalLinkAlt,
+            faLaptop,
+            faHeartbeat,
+            faUsers,
             faFacebook,
             faInstagram,
             faTwitter,

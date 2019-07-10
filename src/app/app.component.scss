@@ -1,6 +1,6 @@
 .layout {
     display: grid;
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows: min-content min-content 1fr min-content;
     grid-template-columns: 100%;
     font-size: 0.9em;
     line-height: 1.2em;
@@ -23,6 +23,23 @@
 
             fa-icon {
                 margin-right: 0.4em;
+            }
+        }
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #322e2d;
+
+        .container {
+            width: 800px;
+            padding: 0.5rem;
+
+            a {
+                margin-right: 1em;
+                text-decoration: none;
             }
         }
     }

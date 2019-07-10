@@ -1,0 +1,16 @@
+.event-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1em 0;
+
+    fa-icon {
+        margin-right: 1em;
+    }
+
+    a {
+        fa-icon {
+            margin: 0 0.5em;
+        }
+    }
+}
