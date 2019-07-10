@@ -1,0 +1,15 @@
+<h2>Our Schedule</h2>
+<p>The following is a schedule of the events and livestreams we will be running, please join us and subscribe.</p>
+
+<div *ngFor="let event of events" class="event-item">
+    <div [ngSwitch]="event.type">
+        <fa-icon [icon]="['fas', 'users']" *ngSwitchCase="'meetup'" size="2x" [fixedWidth]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'chalkboard-teacher']" *ngSwitchCase="'conference'" size="2x" [fixedWidth]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'laptop']" *ngSwitchCase="'hackathon'" size="2x" [fixedWidth]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'heartbeat']" *ngSwitchDefault size="2x" [fixedWidth]="true"></fa-icon>
+    </div>
+    <div>
+        <div><a [href]="event.link" target="_blank">{{ event.title }}<fa-icon [icon]="['fas', 'external-link-alt']" size="sm"></fa-icon></a></div>
+        <div>{{ event.date | date: 'full' }}</div>
+    </div>
+</div>

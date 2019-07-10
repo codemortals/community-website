@@ -7,7 +7,14 @@
                 <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Best Practices</p>
                 <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Open Source</p>
             </div>
-            <img src="/assets/mascot/1.png">
+            <a [routerLink]="['/']"><img src="/assets/mascot/1.png"></a>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="container">
+            <a [routerLink]="['/']">Home</a>
+            <a [routerLink]="['schedule']">Schedule</a>
         </div>
     </div>
 
