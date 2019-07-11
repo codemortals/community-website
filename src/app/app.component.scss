@@ -34,12 +34,17 @@
         background-color: #322e2d;
 
         .container {
-            width: 800px;
-            padding: 0.5rem;
+            width: calc(800px + 1rem);
 
             a {
-                margin-right: 1em;
+                display: inline-block;
+                padding: 0.5rem;
+                color: #009eaf;
                 text-decoration: none;
+
+                &:hover, &.active {
+                    color: #d64b4b;
+                }
             }
         }
     }
