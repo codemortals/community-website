@@ -13,8 +13,8 @@
 
     <div class="navigation">
         <div class="container">
-            <a [routerLink]="['/']">Home</a>
-            <a [routerLink]="['schedule']">Schedule</a>
+            <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            <a [routerLink]="['schedule']" routerLinkActive="active">Schedule</a>
         </div>
     </div>
 

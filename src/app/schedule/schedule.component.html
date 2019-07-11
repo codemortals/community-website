@@ -1,15 +1,21 @@
-<h2>Our Schedule</h2>
-<p>The following is a schedule of the events and livestreams we will be running, please join us and subscribe.</p>
+<h2>Upcoming schedule</h2>
+<p>The following is a schedule of the events and livestreams we will be involved in, please join us and follow / subscribe.</p>
 
-<div *ngFor="let event of events" class="event-item">
-    <div [ngSwitch]="event.type">
-        <fa-icon [icon]="['fas', 'users']" *ngSwitchCase="'meetup'" size="2x" [fixedWidth]="true"></fa-icon>
-        <fa-icon [icon]="['fas', 'chalkboard-teacher']" *ngSwitchCase="'conference'" size="2x" [fixedWidth]="true"></fa-icon>
-        <fa-icon [icon]="['fas', 'laptop']" *ngSwitchCase="'hackathon'" size="2x" [fixedWidth]="true"></fa-icon>
-        <fa-icon [icon]="['fas', 'heartbeat']" *ngSwitchDefault size="2x" [fixedWidth]="true"></fa-icon>
+<ng-container *ngFor="let event of events">
+    <div *ngIf="isFuture(event)" class="event-list">
+        <div [ngSwitch]="event.type" class="event-icon">
+            <fa-icon *ngSwitchCase="'meetup'" [icon]="['fas', 'users']" [fixedWidth]="true" size="2x"></fa-icon>
+            <fa-icon *ngSwitchCase="'conference'" [icon]="['fas', 'chalkboard-teacher']" [fixedWidth]="true" size="2x"></fa-icon>
+            <fa-icon *ngSwitchCase="'hackathon'" [icon]="['fas', 'laptop']" [fixedWidth]="true" size="2x"></fa-icon>
+            <fa-icon *ngSwitchDefault [icon]="['fas', 'heartbeat']" [fixedWidth]="true" size="2x"></fa-icon>
+            <div class="type">{{ event.type }}</div>
+        </div>
+        <div>
+            <div><a [href]="event.link" target="_blank">{{ event.title }}<fa-icon [icon]="['fas', 'external-link-alt']"></fa-icon></a></div>
+            <div class="timing">
+                <span>{{ event.dateStart | date: "HH:mm" }} to {{ event.dateEnd | date: "HH:mm" }}</span>
+                <span>{{ event.dateStart | date: "EEE, dd MMMM yyyy" }}</span>
+            </div>
+        </div>
     </div>
-    <div>
-        <div><a [href]="event.link" target="_blank">{{ event.title }}<fa-icon [icon]="['fas', 'external-link-alt']" size="sm"></fa-icon></a></div>
-        <div>{{ event.date | date: 'full' }}</div>
-    </div>
-</div>
+</ng-container>
