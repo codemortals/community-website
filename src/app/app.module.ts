@@ -20,6 +20,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
+import { ErrorComponent } from './error/error.component';
 import { LandingComponent } from './landing/landing.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 
@@ -28,6 +29,7 @@ import { RoutingModule } from './routing.module';
 @NgModule({
     declarations: [
         AppComponent,
+        ErrorComponent,
         LandingComponent,
         ScheduleComponent,
     ],
