@@ -1,10 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+    faGithub,
     faFacebook,
     faInstagram,
     faTwitter,
@@ -33,6 +35,7 @@ import { RoutingModule } from './routing.module';
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         RoutingModule,
         FontAwesomeModule,
     ],
@@ -48,6 +51,7 @@ export class AppModule {
             faLaptop,
             faHeartbeat,
             faUsers,
+            faGithub,
             faFacebook,
             faInstagram,
             faTwitter,

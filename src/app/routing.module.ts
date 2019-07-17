@@ -4,10 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 
+import { ScheduleServiceResolve } from '../services/schedule.service';
+
 const routes: Routes = [
     {
         path: 'schedule',
-        component: ScheduleComponent
+        component: ScheduleComponent,
+        resolve: {
+            scheduleData: ScheduleServiceResolve
+        }
     },
     {
         path: '**',
