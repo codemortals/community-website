@@ -11,7 +11,7 @@ export class ScheduleComponent {
     public events: Array<Event> = [
         {
             type: 'stream',
-            title: 'Code Mortals Website (Schedule)',
+            title: 'Code Mortals Website Development',
             link: 'https://www.youtube.com/watch?v=WVzwX3_jJPc',
             dateStart: new Date(2019, 6, 10, 19, 0, 0),
             dateEnd: new Date(2019, 6, 10, 21, 0, 0),
@@ -31,11 +31,18 @@ export class ScheduleComponent {
             dateEnd: new Date(2019, 6, 15, 20, 30, 0),
         },
         {
-            type: 'meetup',
-            title: 'Linux from Scratch - Linux 103 - the CLI and beyond',
-            link: 'https://www.meetup.com/Linuxing-In-London/events/262372452/',
+            type: 'stream',
+            title: 'Code Mortals Website Development',
+            link: 'https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g',
             dateStart: new Date(2019, 6, 17, 18, 0, 0),
             dateEnd: new Date(2019, 6, 17, 20, 0, 0),
+        },
+        {
+            type: 'stream',
+            title: 'Reveal JS - Creating slides for our talk at JS Monthly',
+            link: 'https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g',
+            dateStart: new Date(2019, 6, 22, 18, 30, 0),
+            dateEnd: new Date(2019, 6, 22, 20, 30, 0),
         },
         {
             type: 'stream',
@@ -50,7 +57,21 @@ export class ScheduleComponent {
             link: 'https://www.meetup.com/js-monthly/events/262774181/',
             dateStart: new Date(2019, 6, 30, 19, 0, 0),
             dateEnd: new Date(2019, 6, 30, 21, 0, 0),
-        }
+        },
+        {
+            type: 'stream',
+            title: 'Live stream (TBC)',
+            link: 'https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g',
+            dateStart: new Date(2019, 7, 12, 18, 0, 0),
+            dateEnd: new Date(2019, 7, 12, 20, 0, 0),
+        },
+        {
+            type: 'stream',
+            title: 'Live stream (TBC)',
+            link: 'https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g',
+            dateStart: new Date(2019, 7, 14, 18, 0, 0),
+            dateEnd: new Date(2019, 7, 14, 20, 0, 0),
+        },
     ];
 
     public isFuture(event: Event) {
