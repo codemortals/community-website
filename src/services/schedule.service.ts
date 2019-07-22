@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
-
-import { Event } from '../app/schedule/event';
+import * as firebase from 'firebase';
 
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+
+import { Event } from '../app/schedule/event';
 
 @Injectable({
     providedIn: 'root',
@@ -17,7 +18,10 @@ export class ScheduleService {
     ) { }
 
     public findAll(): Observable<Array<Event>> {
-        return this.firestore.collection<Event>('schedule').valueChanges();
+        return this.firestore.collection<Event>(
+            'schedule',
+            (ref: firebase.firestore.Query) => ref.where('dateEnd', '>', new Date()).orderBy('dateEnd'),
+        ).valueChanges();
     }
 
 }
