@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import { Event } from '../app/schedule/event';
+
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root',
@@ -9,11 +13,11 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 export class ScheduleService {
 
     constructor(
-        private http: HttpClient,
+        private firestore: AngularFirestore,
     ) { }
 
     public findAll(): Observable<Array<Event>> {
-        return this.http.get<Array<Event>>('/assets/data/schedule.json');
+        return this.firestore.collection<Event>('schedule').valueChanges();
     }
 
 }
@@ -28,7 +32,7 @@ export class ScheduleServiceResolve implements Resolve<Array<Event>> {
     ) { }
 
     public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<Event>> {
-        return this.scheduleService.findAll();
+        return this.scheduleService.findAll().pipe(take(1));
     }
 
 }
