@@ -2,7 +2,7 @@
 <p>The following is a schedule of the events and livestreams we will be involved in, please join us and follow / subscribe.</p>
 
 <ng-container *ngFor="let event of events">
-    <div *ngIf="isFuture(event)" class="event-list">
+    <div class="event-list">
         <div [ngSwitch]="event.type" class="event-icon">
             <fa-icon *ngSwitchCase="'meetup'" [icon]="['fas', 'users']" [fixedWidth]="true" size="2x"></fa-icon>
             <fa-icon *ngSwitchCase="'conference'" [icon]="['fas', 'chalkboard-teacher']" [fixedWidth]="true" size="2x"></fa-icon>

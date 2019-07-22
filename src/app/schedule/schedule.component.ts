@@ -30,8 +30,4 @@ export class ScheduleComponent implements OnInit, OnDestroy {
         this.scheduleSubscription.unsubscribe();
     }
 
-    public isFuture(event: Event) {
-        return event.dateEnd.toMillis() > Date.now();
-    }
-
 }
