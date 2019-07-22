@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,6 +28,7 @@ import { LandingComponent } from './landing/landing.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 
 import { RoutingModule } from './routing.module';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -36,8 +38,10 @@ import { RoutingModule } from './routing.module';
         ScheduleComponent,
     ],
     imports: [
+        AngularFireModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
         BrowserModule,
-        HttpClientModule,
         RoutingModule,
         FontAwesomeModule,
     ],

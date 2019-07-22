@@ -13,8 +13,8 @@
         <div>
             <div><a [href]="event.link" target="_blank">{{ event.title }}<fa-icon [icon]="['fas', 'external-link-alt']"></fa-icon></a></div>
             <div class="timing">
-                <span>{{ event.dateStart | date: "HH:mm" }} to {{ event.dateEnd | date: "HH:mm" }}</span>
-                <span>{{ event.dateStart | date: "EEE, dd MMMM yyyy" }}</span>
+                <span>{{ event.dateStart.toDate() | date: "HH:mm" }} to {{ event.dateEnd.toDate() | date: "HH:mm" }}</span>
+                <span>{{ event.dateStart.toDate() | date: "EEE, dd MMMM yyyy" }}</span>
             </div>
         </div>
     </div>
