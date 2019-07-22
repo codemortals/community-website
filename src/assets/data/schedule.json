@@ -1,0 +1,58 @@
+[
+    {
+        "type": "stream",
+        "title": "Code Mortals Website Development",
+        "link": "https://www.youtube.com/watch?v=WVzwX3_jJPc",
+        "dateStart": "2019-07-10T19:00:00Z",
+        "dateEnd": "2019-07-10T21:00:00Z"
+    },
+    {
+        "type": "conference",
+        "title": "Serverless Days",
+        "link": "https://london.serverlessdays.io",
+        "dateStart": "2019-07-11 10:00:00",
+        "dateEnd": "2019-07-11 18:00:00"
+    },
+    {
+        "type": "stream",
+        "title": "4 Developers joining us to discuss entering their careers",
+        "link": "https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g",
+        "dateStart": "2019-07-15T18:30:00Z",
+        "dateEnd": "2019-07-15T20:30:00Z"
+    },
+    {
+        "type": "stream",
+        "title": "Reveal JS - Creating slides for our talk at JS Monthly",
+        "link": "https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g",
+        "dateStart": "2019-07-17T18:30:00Z",
+        "dateEnd": "2019-07-17T20:30:00Z"
+    },
+    {
+        "type": "stream",
+        "title": "Developers vs Recruiters - Part 2",
+        "link": "https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g",
+        "dateStart": "2019-07-24T18:30:00Z",
+        "dateEnd": "2019-07-24T20:30:00Z"
+    },
+    {
+        "type": "meetup",
+        "title": "JSMonthly - We are speaking about Cypress and Angular CI/CD",
+        "link": "https://www.meetup.com/js-monthly/events/262774181/",
+        "dateStart": "2019-07-30T19:00:00Z",
+        "dateEnd": "2019-07-30T21:00:00Z"
+    },
+    {
+        "type": "stream",
+        "title": "Code Mortals Website Development",
+        "link": "https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g",
+        "dateStart": "2019-08-12T18:00:00Z",
+        "dateEnd": "2019-08-12T20:00:00Z"
+    },
+    {
+        "type": "stream",
+        "title": "Code Mortals Website Development",
+        "link": "https://www.youtube.com/channel/UCtjddf97i066cJVcloZ4B7g",
+        "dateStart": "2019-08-14T18:00:00Z",
+        "dateEnd": "2019-08-14T20:00:00Z"
+    }
+]
