@@ -1,6 +1,7 @@
 {
     "baseUrl": "http://localhost:8080",
     "ignoreTestFiles": "*.js",
+    "fixturesFolder": "test/fixtures",
     "integrationFolder": "test/integration",
     "pluginsFile": "test/plugins",
     "screenshotsFolder": "test/screenshots",

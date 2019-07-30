@@ -4,14 +4,14 @@
             <div>
                 <h1>Code Mortals</h1>
                 <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Agile Methods</p>
-                <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Best Practices</p>
                 <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Open Source</p>
+                <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Best Practices</p>
             </div>
             <a [routerLink]="['/']"><img src="/assets/mascot/1.png"></a>
         </div>
     </div>
 
-    <div class="navigation">
+    <div class="navigation" role="navigation">
         <div class="container">
             <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
             <a [routerLink]="['schedule']" routerLinkActive="active">Schedule</a>
