@@ -3,29 +3,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-    faGithub,
-    faFacebook,
-    faInstagram,
-    faTwitter,
-    faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
-import {
-    faChalkboardTeacher,
-    faCheck,
-    faExternalLinkAlt,
-    faLaptop,
-    faHeartbeat,
-    faUsers,
-} from '@fortawesome/free-solid-svg-icons';
-
 import { AppComponent } from './app.component';
-import { ErrorComponent } from './error/error.component';
-import { LandingComponent } from './landing/landing.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { ErrorComponent } from './site/error/error.component';
 
 import { RoutingModule } from './routing.module';
 import { environment } from '../environments/environment';
@@ -33,9 +12,6 @@ import { environment } from '../environments/environment';
 @NgModule({
     declarations: [
         AppComponent,
-        ErrorComponent,
-        LandingComponent,
-        ScheduleComponent,
     ],
     imports: [
         AngularFireModule,
@@ -43,25 +19,9 @@ import { environment } from '../environments/environment';
         AngularFirestoreModule,
         BrowserModule,
         RoutingModule,
-        FontAwesomeModule,
     ],
     providers: [],
     bootstrap: [ AppComponent ],
 })
 export class AppModule {
-    constructor() {
-        library.add(
-            faChalkboardTeacher,
-            faCheck,
-            faExternalLinkAlt,
-            faLaptop,
-            faHeartbeat,
-            faUsers,
-            faGithub,
-            faFacebook,
-            faInstagram,
-            faTwitter,
-            faYoutube,
-        );
-    }
 }

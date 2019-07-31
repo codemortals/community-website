@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { Event } from '../app/schedule/event';
+import { Event } from '../app/site/schedule/event';
 
 @Injectable({
     providedIn: 'root',
