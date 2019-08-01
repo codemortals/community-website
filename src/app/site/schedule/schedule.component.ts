@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Event } from './event';
 import { ActivatedRoute } from '@angular/router';
-import { ScheduleService } from '../../services/schedule.service';
+import { ScheduleService } from '../../../services/schedule.service';
 import { Subscription } from 'rxjs';
 
 @Component({
