@@ -1,0 +1,119 @@
+.layout {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-columns: 100%;
+    font-size: 0.9em;
+    line-height: 1.2em;
+    height: 100%;
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        background-color: #322e2d;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4);
+        z-index: 100;
+
+        .container {
+            display: flex;
+            width: 100%;
+            padding: 0.2rem 1rem;
+
+            > *:not(.icon) {
+                display: inline-block;
+                padding: 0.5rem;
+                color: #009eaf;
+            }
+
+            > .icon {
+                line-height: 0;
+            }
+
+            a, button {
+                text-decoration: none;
+
+                &:hover, &.active {
+                    color: #d64b4b;
+                }
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        background-color: #f8f0ee;
+
+        nav {
+            width: 300px;
+            background-color: #322E2D;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                margin-top: 5px;
+                margin-bottom: 0;
+                padding-left: 0;
+                list-style: none;
+
+                li {
+                    list-style: none;
+
+                    * {
+                        display: block;
+                        padding: 0.5rem 1rem;
+                        color: #F8F0EE;
+                    }
+
+                    span {
+                        font-weight: 500;
+                    }
+
+                    a {
+                        text-decoration: none;
+
+                        &:hover {
+                            background-color: #827775;
+                        }
+
+                        &.active {
+                            background-color: #D64B4B;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        background-color: #C7B9B9;
+
+        .container {
+            display: grid;
+            width: 100%;
+            padding: 1rem;
+            color: #f8f0ee;
+            grid-gap: 1rem;
+            grid-auto-rows: min-content;
+            grid-auto-flow: column;
+            justify-content: flex-end;
+
+            a {
+                color: #322E2D;
+            }
+
+            a:hover {
+                color: #D64B4B;
+            }
+        }
+    }
+}

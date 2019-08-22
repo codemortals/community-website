@@ -1,0 +1,11 @@
+<h1>Your Profile</h1>
+
+<div class="account">
+    <img class="avatar" [src]="account.avatar">
+
+    <div>
+        <h2>{{ account.alias }}</h2>
+        <div>{{ account.email }}</div>
+        <div class="caption">Joined: {{ account.since | date }}</div>
+    </div>
+</div>

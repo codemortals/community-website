@@ -15,12 +15,18 @@
         <div class="container">
             <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
             <a [routerLink]="['/schedule']" routerLinkActive="active">Schedule</a>
+            <span class="flex"></span>
+            <ng-container *ngIf="account">
+                <a [routerLink]="['/account', 'profile']">{{ account.alias }}</a>
+                <button (click)="logout()">Logout</button>
+            </ng-container>
+            <button (click)="login()" *ngIf="!account">Login</button>
         </div>
     </div>
 
     <div class="content">
         <div class="container">
-            <router-outlet></router-outlet>
+            <ng-content></ng-content>
         </div>
     </div>
 

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import * as firebase from 'firebase';
 
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { Event } from '../app/site/schedule/event';
+import { Event } from './models';
 
 @Injectable({
     providedIn: 'root',
