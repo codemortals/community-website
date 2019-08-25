@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SiteComponent } from './site.component';
-import { ErrorComponent } from './error/error.component';
+import { AuthResolve, ScheduleServiceResolve } from '@cm/services';
+
+import { ContentComponent } from './content.component';
 import { LandingComponent } from './landing/landing.component';
 import { ScheduleComponent } from './schedule/schedule.component';
-
-import { ScheduleServiceResolve } from '../../services/schedule.service';
 
 const routes: Routes = [
     {
         path: '',
-        component: SiteComponent,
+        component: ContentComponent,
         children: [
             {
                 path: '',
@@ -20,17 +19,15 @@ const routes: Routes = [
             },
             {
                 path: 'schedule',
-                pathMatch: 'full',
                 component: ScheduleComponent,
                 resolve: {
                     scheduleData: ScheduleServiceResolve
                 }
             },
-            {
-                path: '**',
-                component: ErrorComponent,
-            },
         ],
+        resolve: {
+            auth: AuthResolve,
+        },
     },
 ];
 

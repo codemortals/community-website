@@ -34,12 +34,16 @@
         background-color: #322e2d;
 
         .container {
+            display: flex;
             width: calc(800px + 1rem);
 
-            a {
+            > * {
                 display: inline-block;
                 padding: 0.5rem;
                 color: #009eaf;
+            }
+
+            a, button {
                 text-decoration: none;
 
                 &:hover, &.active {
@@ -65,24 +69,24 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        background-color: #322e2d;
+        background-color: #C7B9B9;
 
         .container {
-            color: #f8f0ee;
-            padding: 1rem;
             display: grid;
+            width: 800px;
+            padding: 1rem;
+            color: #f8f0ee;
             grid-gap: 1rem;
             grid-auto-rows: min-content;
             grid-auto-flow: column;
             justify-content: flex-end;
-            width: 800px;
 
             a {
-                color: #f8f0ee;
+                color: #322E2D;
             }
 
             a:hover {
-                color: #c7b9b9;
+                color: #D64B4B;
             }
         }
     }

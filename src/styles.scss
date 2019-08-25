@@ -11,6 +11,11 @@ html, body {
     background-color: lighten(#673ab7, 50);
 }
 
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     font-size: 2em;
     font-weight: 300;
@@ -36,10 +41,49 @@ h4 {
 }
 
 a {
-    font-weight: 500;
     color: #009eaf;
+    line-height: normal;
 
     &:hover {
         color: #00b8cc;
     }
+}
+
+.caption {
+    font-size: 0.8em;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled:hover {
+        cursor: default;
+    }
+}
+
+.flex {
+    flex: 1;
 }

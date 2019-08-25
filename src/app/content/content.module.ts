@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SiteComponent } from './site.component';
-import { ErrorComponent } from './error/error.component';
+import { DesignModule } from '@cm/design/design.module';
+
+import { ContentComponent } from './content.component';
 import { LandingComponent } from './landing/landing.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 
-import { DesignModule } from '../design.module';
 import { RoutingModule } from './routing.module';
 
 @NgModule({
     declarations: [
-        SiteComponent,
-        ErrorComponent,
+        ContentComponent,
         LandingComponent,
         ScheduleComponent,
     ],
@@ -22,5 +21,5 @@ import { RoutingModule } from './routing.module';
         RoutingModule,
     ],
 })
-export class SiteModule {
+export class ContentModule {
 }
