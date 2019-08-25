@@ -1,0 +1,10 @@
+.account {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: min-content 1fr;
+    align-items: end;
+
+    .avatar {
+        height: 200px;
+    }
+}

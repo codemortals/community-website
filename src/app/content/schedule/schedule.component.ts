@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
-import { Event } from './event';
 import { ActivatedRoute } from '@angular/router';
-import { ScheduleService } from '../../../services/schedule.service';
+
 import { Subscription } from 'rxjs';
+
+import { Event } from '@cm/services/models';
+import { ScheduleService } from '@cm/services';
 
 @Component({
     templateUrl: './schedule.component.html',
