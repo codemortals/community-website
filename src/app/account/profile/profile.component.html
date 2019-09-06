@@ -1,11 +1,60 @@
 <h1>Your Profile</h1>
 
-<div class="account">
+<section class="account">
     <img class="avatar" [src]="account.avatar">
 
     <div>
-        <h2>{{ account.alias }}</h2>
+        <h2>{{ account.alias }} </h2>
         <div>{{ account.email }}</div>
-        <div class="caption">Joined: {{ account.since | date }}</div>
+        <div class="caption">Joined: {{ account.since.toDate() | date }}</div>
     </div>
-</div>
+</section>
+
+<section class="profile">
+    <form (submit)="saveProfile()" [formGroup]="accountForm">
+
+        <rock-input label="Introduction" name="introduction" type="textarea" formControlName="introduction">
+            <rock-error [control]="accountForm.get('introduction')"></rock-error>
+        </rock-input>
+
+        <rock-select label="What is your role in technology?" placeholder="What best describes your role or goal" type="select" formControlName="role">
+            <div rockOption *ngFor="let role of roles" [value]="role">{{ role }}</div>
+            <rock-error [control]="accountForm.get('role')"></rock-error>
+        </rock-select>
+
+        <div class="socials" formGroupName="social">
+            <div>
+                <rock-input label="GitHub" name="github" type="text" formControlName="github">
+                    <rock-error [control]="accountForm.get('social').get('github')"></rock-error>
+                </rock-input>
+
+                <rock-input label="Twitter" name="twitter" type="text" formControlName="twitter">
+                    <rock-error [control]="accountForm.get('social').get('twitter')"></rock-error>
+                </rock-input>
+
+                <rock-input label="YouTube" name="youtube" type="text" formControlName="youtube">
+                    <rock-error [control]="accountForm.get('social').get('youtube')"></rock-error>
+                </rock-input>
+            </div>
+
+            <div>
+                <rock-input label="Facebook" name="facebook" type="text" formControlName="facebook">
+                    <rock-error [control]="accountForm.get('social').get('facebook')"></rock-error>
+                </rock-input>
+
+                <rock-input label="LinkedIn" name="linkedin" type="text" formControlName="linkedin">
+                    <rock-error [control]="accountForm.get('social').get('linkedin')"></rock-error>
+                </rock-input>
+
+                <rock-input label="Instagram" name="instagram" type="text" formControlName="instagram">
+                    <rock-error [control]="accountForm.get('social').get('instagram')"></rock-error>
+                </rock-input>
+            </div>
+        </div>
+
+        <div>
+            <button rock-button type="submit" [disabled]="accountForm.invalid || accountForm.pristine">Save</button>
+        </div>
+
+    </form>
+</section>

@@ -72,6 +72,7 @@
             "single"
         ],
         "trailing-comma": false,
+        "no-angle-bracket-type-assertion": false,
         "no-conflicting-lifecycle": true,
         "no-host-metadata-property": true,
         "no-input-rename": true,
