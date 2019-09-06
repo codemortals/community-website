@@ -15,7 +15,7 @@ export class ProfileService {
         private firestore: AngularFirestore,
     ) { }
 
-    public retrieve(userId): Observable<UserProfile> {
+    public retrieve(userId: string): Observable<UserProfile> {
         return this.firestore.collection<UserProfile>('users').doc<UserProfile>(userId).valueChanges();
     }
 

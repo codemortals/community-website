@@ -30,11 +30,11 @@ export class LayoutSiteComponent implements OnDestroy, OnInit {
         this.authenticationService.account.pipe(takeUntil(this.isDestroyed)).subscribe((account) => this.account = account);
     }
 
-    public async login() {
+    public login(): void {
         this.authenticationService.login('github').pipe(take(1)).subscribe();
     }
 
-    public async logout() {
+    public logout(): void {
         this.authenticationService.logout().pipe(take(1)).subscribe();
     }
 
