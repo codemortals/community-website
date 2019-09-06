@@ -1,3 +1,7 @@
+section + section {
+    margin-top: 2rem;
+}
+
 .account {
     display: grid;
     grid-gap: 1rem;
@@ -6,5 +10,20 @@
 
     .avatar {
         height: 200px;
+    }
+}
+
+.profile {
+    form {
+        display: grid;
+        grid-auto-rows: min-content;
+    }
+
+    @media all and (min-width: 1024px) {
+        .socials {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 2rem;
+        }
     }
 }

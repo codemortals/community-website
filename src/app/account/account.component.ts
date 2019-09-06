@@ -15,10 +15,6 @@ export class AccountComponent {
                     name: 'Profile',
                     link: [ '/account', 'profile' ],
                 },
-                {
-                    name: 'Badges',
-                    link: [ '/account', 'badges' ],
-                },
             ],
         },
     ];

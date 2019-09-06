@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { DesignModule } from '@cm/design/design.module';
 
@@ -14,7 +13,6 @@ import { RoutingModule } from './routing.module';
         ProfileComponent,
     ],
     imports: [
-        CommonModule,
         DesignModule,
         RoutingModule,
     ],

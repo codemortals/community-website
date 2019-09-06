@@ -2,10 +2,9 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "paths": {
-            "@cm/*": ["src/*"],
+            "@cm/*": [
+                "src/*"
+            ]
         }
-    },
-    "angularCompilerOptions": {
-        "enableIvy": true
     }
 }

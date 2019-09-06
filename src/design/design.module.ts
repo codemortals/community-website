@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RockButtonModule, RockErrorModule, RockInputModule, RockSelectModule } from '@venzra/bedrock';
 
 import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 import { LayoutSiteComponent } from './layout-site/layout-site.component';
@@ -33,13 +35,24 @@ import {
     ],
     imports: [
         CommonModule,
-        RouterModule,
         FontAwesomeModule,
+        ReactiveFormsModule,
+        RockButtonModule,
+        RockErrorModule,
+        RockInputModule,
+        RockSelectModule,
+        RouterModule,
     ],
     exports: [
+        CommonModule,
+        FontAwesomeModule,
         LayoutAdminComponent,
         LayoutSiteComponent,
-        FontAwesomeModule,
+        ReactiveFormsModule,
+        RockButtonModule,
+        RockErrorModule,
+        RockInputModule,
+        RockSelectModule,
     ]
 })
 export class DesignModule {
