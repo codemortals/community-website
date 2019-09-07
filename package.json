@@ -2,13 +2,14 @@
     "name": "codemortals",
     "version": "0.2.0",
     "scripts": {
-        "build": "ng build",
-        "lint": "ng lint",
-        "start": "ng serve --open",
-        "start:test": "serve -s -p 8080 dist",
-        "test": "npm run lint && npm run build && concurrently -r -k -s first \"npm run start:test\" \"npm run cypress:run\"",
+        "cypress:open": "cypress open",
         "cypress:run": "cypress run",
-        "cypress:open": "cypress open"
+        "build:prod": "ng build --configuration=production",
+        "build:test": "ng build",
+        "lint": "ng lint",
+        "start": "ng serve --configuration=develop --open",
+        "start:test": "serve -s -p 8080 dist",
+        "test": "npm run lint && npm run build:test && concurrently -r -k -s first \"npm run start:test\" \"npm run cypress:run\""
     },
     "private": true,
     "cypress-cucumber-preprocessor": {

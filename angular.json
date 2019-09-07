@@ -35,6 +35,14 @@
                         "scripts": []
                     },
                     "configurations": {
+                        "develop": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.local.ts"
+                                }
+                            ]
+                        },
                         "production": {
                             "fileReplacements": [
                                 {
@@ -67,6 +75,9 @@
                         "browserTarget": "codemortals:build"
                     },
                     "configurations": {
+                        "develop": {
+                            "browserTarget": "codemortals:build:develop"
+                        },
                         "production": {
                             "browserTarget": "codemortals:build:production"
                         }

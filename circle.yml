@@ -13,16 +13,21 @@ jobs:
       - store_artifacts:
           path: test/screenshots
 
-
   deploy:
     docker:
       - image: circleci/node:10
     steps:
       - checkout
       - run: npm install
-      - run: npm run build
-      - run: npx firebase use --token $FIREBASE_KEY $TARGET_ENVIRONMENT
-      - run: npx firebase deploy --token $FIREBASE_KEY
+      - run: sed -i 's|{{ API_KEY }}|'${API_KEY}'|g' src/environments/environment.prod.ts
+      - run: sed -i 's|{{ APP_ID }}|'${APP_ID}'|g' src/environments/environment.prod.ts
+      - run: sed -i 's|{{ AUTH_DOMAIN }}|'${AUTH_DOMAIN}'|g' src/environments/environment.prod.ts
+      - run: sed -i 's|{{ DATABASE_URL }}|'${DATABASE_URL}'|g' src/environments/environment.prod.ts
+      - run: sed -i 's|{{ MESSAGE_SENDER_ID }}|'${MESSAGE_SENDER_ID}'|g' src/environments/environment.prod.ts
+      - run: sed -i 's|{{ PROJECT_ID }}|'${PROJECT_ID}'|g' src/environments/environment.prod.ts
+      - run: sed -i 's|{{ STORAGE_BUCKET }}|'${STORAGE_BUCKET}'|g' src/environments/environment.prod.ts
+      - run: npm run build:prod
+      - run: npx firebase deploy --project codemortals-website --token $FIREBASE_KEY
 
 workflows:
   version: 2
@@ -30,6 +35,7 @@ workflows:
     jobs:
       - test
       - deploy:
+          context: website-production
           requires:
             - test
           filters:

@@ -12,3 +12,6 @@ Feature: Showing the Code Mortals upcoming events schedule
     And expect a "GET" request to "https://firestore.googleapis.com/google.firestore.v1.Firestore" will return "schedule/response.txt"
     And the "/schedule" page is open
     Then there are 3 "event-list" entries
+
+  Scenario: Ensure listing of schedule items
+    Given the "/" page is open
