@@ -13,11 +13,11 @@
 <section class="profile">
     <form (submit)="saveProfile()" [formGroup]="accountForm">
 
-        <rock-input label="Introduction" name="introduction" type="textarea" formControlName="introduction">
+        <rock-input label="Introduction" name="introduction" type="textarea" formControlName="introduction" [required]="true">
             <rock-error [control]="accountForm.get('introduction')"></rock-error>
         </rock-input>
 
-        <rock-select label="What is your role in technology?" placeholder="What best describes your role or goal" type="select" formControlName="role">
+        <rock-select label="What is your role in technology?" placeholder="What best describes your role or goal" type="select" formControlName="role" [required]="true">
             <div rockOption *ngFor="let role of roles" [value]="role">{{ role }}</div>
             <rock-error [control]="accountForm.get('role')"></rock-error>
         </rock-select>
