@@ -9,4 +9,5 @@ export const environment = {
         messagingSenderId: '{{ MESSAGE_SENDER_ID }',
         appId: '{{ APP_ID }}',
     },
+    tracking: '{{ GA_CODE }}',
 };

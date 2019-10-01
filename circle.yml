@@ -23,6 +23,7 @@ jobs:
       - run: sed -i 's|{{ APP_ID }}|'${APP_ID}'|g' src/environments/environment.prod.ts
       - run: sed -i 's|{{ AUTH_DOMAIN }}|'${AUTH_DOMAIN}'|g' src/environments/environment.prod.ts
       - run: sed -i 's|{{ DATABASE_URL }}|'${DATABASE_URL}'|g' src/environments/environment.prod.ts
+      - run: sed -i 's|{{ GA_CODE }}|'${GA_CODE}'|g' src/environments/environment.prod.ts
       - run: sed -i 's|{{ MESSAGE_SENDER_ID }}|'${MESSAGE_SENDER_ID}'|g' src/environments/environment.prod.ts
       - run: sed -i 's|{{ PROJECT_ID }}|'${PROJECT_ID}'|g' src/environments/environment.prod.ts
       - run: sed -i 's|{{ STORAGE_BUCKET }}|'${STORAGE_BUCKET}'|g' src/environments/environment.prod.ts
