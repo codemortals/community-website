@@ -18,4 +18,5 @@ export const environment = {
         messagingSenderId: 'messagingSenderId',
         appId: 'appId',
     },
+    tracking: '',
 };
