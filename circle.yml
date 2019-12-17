@@ -15,6 +15,7 @@ jobs:
             - node_modules
             - hosting/node_modules
             - functions/node_modules
+            - /root/.cache/Cypress
 
   test-ui:
     docker:

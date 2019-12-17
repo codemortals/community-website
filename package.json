@@ -1,9 +1,5 @@
 {
     "name": "community",
-    "scripts": {
-        "postinstall": "(cd hosting; npm install) && (cd functions; npm install)"
-    },
-    "main": "lib/index.js",
     "devDependencies": {
         "firebase-tools": "7.10.0"
     },
