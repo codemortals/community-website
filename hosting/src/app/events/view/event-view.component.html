@@ -1,0 +1,65 @@
+<div class="intro">
+    <div>
+        <cm-page-header>
+            <h2>{{ event.title }}</h2>
+            <div>
+                <span [ngSwitch]="event.type">
+                    <ng-container *ngSwitchCase="'meetup'">Meet-up at</ng-container>
+                    <ng-container *ngSwitchCase="'workshop'">Workshop at</ng-container>
+                    <ng-container *ngSwitchCase="'conference'">Conference at</ng-container>
+                    <ng-container *ngSwitchCase="'hackathon'">Hackathon at</ng-container>
+                    <ng-container *ngSwitchCase="'stream'">Online Stream from</ng-container>
+                    <ng-container *ngSwitchDefault>Event</ng-container>
+                </span>
+                {{ event.venue.name }}
+            </div>
+        </cm-page-header>
+
+        <p [rockMarkdown]="event.summary"></p>
+    </div>
+
+    <div class="intro__icon">
+        <img [src]="event.image">
+        <a class="intro__icon__link" *ngIf="event.website" [href]="event.website" [title]="event.website" target="_blank">
+            <fa-icon [icon]="['fas', 'globe']"></fa-icon>
+            Event Website
+        </a>
+    </div>
+</div>
+
+<section>
+    <h3 class="display-1" [ngPlural]="event.dates.length">
+        <ng-template ngPluralCase="=1">Date</ng-template>
+        <ng-template ngPluralCase="other">Dates</ng-template>
+    </h3>
+    <div class="dates">
+        <div class="dates__item" *ngFor="let date of event.dates">
+            <div class="dates__item__date">{{ date.start.toDate() | date: 'EEE, dd LLL yyyy' }}</div>
+            <div class="dates__item__time">{{ date.start.toDate() | date: 'HH:mm' }} to {{ date.end.toDate() | date: 'HH:mm' }}</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3 class="display-1">Location</h3>
+    <div class="map">
+        <div #googleMap></div>
+        <div #eventAddress class="map__pin">
+            <div class="map__pin__header">{{ event.venue.name }}</div>
+            <div *ngFor="let line of event.venue.address.split(',')">{{ line }}</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3 class="display-1" [ngPlural]="event.organisers.length">
+        <ng-template ngPluralCase="=1">Organiser</ng-template>
+        <ng-template ngPluralCase="other">Organisers</ng-template>
+    </h3>
+    <div class="organsiers">
+        <div class="organsiers__list" *ngFor="let organiser of event.organisers">
+            <img [src]="organiser.avatar">
+            <div>{{ organiser.alias }}</div>
+        </div>
+    </div>
+</section>

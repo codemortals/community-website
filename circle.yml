@@ -1,13 +1,29 @@
 version: 2
 
 jobs:
-  test:
+  initialise:
     docker:
       - image: cypress/base:10
     steps:
       - checkout
       - run: npm install
-      - run: npm run test
+      - run: (cd hosting; npm install)
+      - run: (cd functions; npm install)
+      - save_cache:
+          key: dependencies-{{ .Revision }}
+          paths:
+            - node_modules
+            - hosting/node_modules
+            - functions/node_modules
+
+  test-ui:
+    docker:
+      - image: cypress/base:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependencies-{{ .Revision }}
+      - run: (cd hosting; npm run test)
       - store_artifacts:
           path: test/videos
       - store_artifacts:
@@ -18,27 +34,32 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - run: npm install
-      - run: sed -i 's|{{ API_KEY }}|'${API_KEY}'|g' src/environments/environment.prod.ts
-      - run: sed -i 's|{{ APP_ID }}|'${APP_ID}'|g' src/environments/environment.prod.ts
-      - run: sed -i 's|{{ AUTH_DOMAIN }}|'${AUTH_DOMAIN}'|g' src/environments/environment.prod.ts
-      - run: sed -i 's|{{ DATABASE_URL }}|'${DATABASE_URL}'|g' src/environments/environment.prod.ts
-      - run: sed -i 's|{{ GA_CODE }}|'${GA_CODE}'|g' src/environments/environment.prod.ts
-      - run: sed -i 's|{{ MESSAGE_SENDER_ID }}|'${MESSAGE_SENDER_ID}'|g' src/environments/environment.prod.ts
-      - run: sed -i 's|{{ PROJECT_ID }}|'${PROJECT_ID}'|g' src/environments/environment.prod.ts
-      - run: sed -i 's|{{ STORAGE_BUCKET }}|'${STORAGE_BUCKET}'|g' src/environments/environment.prod.ts
-      - run: npm run build:prod
+      - restore_cache:
+          key: dependencies-{{ .Revision }}
+      - run: sed -i 's|{{ API_KEY }}|'${API_KEY}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ APP_ID }}|'${APP_ID}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ AUTH_DOMAIN }}|'${AUTH_DOMAIN}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ DATABASE_URL }}|'${DATABASE_URL}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ GA_CODE }}|'${GA_CODE}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ MESSAGE_SENDER_ID }}|'${MESSAGE_SENDER_ID}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ PROJECT_ID }}|'${PROJECT_ID}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ STORAGE_BUCKET }}|'${STORAGE_BUCKET}'|g' hosting/src/environments/environment.prod.ts
+      - run: (cd hosting; npm run build:prod)
+      - run: npx firebase functions:config:set google.places_key=$GOOGLE_PLACES_KEY --token $FIREBASE_KEY
       - run: npx firebase deploy --project codemortals-website --token $FIREBASE_KEY
 
 workflows:
   version: 2
   build-deploy:
     jobs:
-      - test
+      - initialise
+      - test-ui:
+          requires:
+            - initialise
       - deploy:
           context: website-production
           requires:
-            - test
-          filters:
-            branches:
-              only: master
+            - test-ui
+#          filters:
+#            branches:
+#              only: master

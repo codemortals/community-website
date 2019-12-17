@@ -1,0 +1,41 @@
+.event-dates {
+    display: block;
+
+    > :nth-child(1) {
+        grid-area: date
+    }
+
+    > :nth-child(2) {
+        grid-area: time-1
+    }
+
+    > :nth-child(3) {
+        grid-area: time-2
+    }
+
+    > :nth-child(4) {
+        grid-area: remove
+    }
+
+    .date-actions {
+        display: grid;
+        justify-content: end;
+        align-content: center;
+    }
+
+    @media all and (min-width: 720px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: " date remove " " time-1 time-2 ";
+        column-gap: 2rem;
+    }
+
+}
+
+.form-actions {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: end;
+    grid-gap: 2rem;
+    margin: 2rem 0;
+}

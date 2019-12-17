@@ -3,14 +3,23 @@ service cloud.firestore {
 
   match /databases/{database}/documents {
 
-    match /users/{userId} {
+    function signedIn() {
+      return request != null && request.auth != null && request.auth.uid != null;
+    }
+
+    match /events/{event} {
       allow read: if true;
-      allow write: if request.auth.uid == userId;
+      allow write: if signedIn();
     }
 
     match /schedule/{schedule} {
       allow read: if true;
       allow write: if false;
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if request.auth.uid == userId;
     }
 
   }

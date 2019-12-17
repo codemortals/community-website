@@ -1,58 +1,11 @@
 {
-    "name": "codemortals",
-    "version": "0.2.0",
+    "name": "community",
     "scripts": {
-        "cypress:open": "cypress open",
-        "cypress:run": "cypress run",
-        "build:prod": "ng build --configuration=production",
-        "build:test": "ng build",
-        "lint": "ng lint",
-        "start": "ng serve --configuration=develop --open",
-        "start:test": "serve -s -p 8080 dist",
-        "test": "npm run lint && npm run build:test && concurrently -r -k -s first \"npm run start:test\" \"npm run cypress:run\""
+        "postinstall": "(cd hosting; npm install) && (cd functions; npm install)"
     },
-    "private": true,
-    "cypress-cucumber-preprocessor": {
-        "commonPath": "common",
-        "step_definitions": "test/step_definitions"
-    },
-    "dependencies": {
-        "@angular/animations": "8.2.5",
-        "@angular/cdk": "8.1.4",
-        "@angular/common": "8.2.5",
-        "@angular/compiler": "8.2.5",
-        "@angular/core": "8.2.5",
-        "@angular/fire": "5.2.1",
-        "@angular/forms": "8.2.5",
-        "@angular/platform-browser": "8.2.5",
-        "@angular/platform-browser-dynamic": "8.2.5",
-        "@angular/router": "8.2.5",
-        "@fortawesome/angular-fontawesome": "0.5.0",
-        "@fortawesome/fontawesome-svg-core": "1.2.22",
-        "@fortawesome/free-brands-svg-icons": "5.10.2",
-        "@fortawesome/free-regular-svg-icons": "5.10.2",
-        "@fortawesome/free-solid-svg-icons": "5.10.2",
-        "@venzra/bedrock": "0.2.4",
-        "firebase": "6.5.0",
-        "normalize.css": "8.0.1",
-        "rxjs": "6.5.3",
-        "tslib": "1.10.0",
-        "zone.js": "0.10.2"
-    },
+    "main": "lib/index.js",
     "devDependencies": {
-        "@angular-devkit/build-angular": "0.803.3",
-        "@angular/cli": "8.3.3",
-        "@angular/compiler-cli": "8.2.5",
-        "@angular/language-service": "8.2.5",
-        "@types/node": "12.7.4",
-        "codelyzer": "5.1.0",
-        "concurrently": "4.1.2",
-        "cypress": "3.4.1",
-        "cypress-cucumber-preprocessor": "1.16.0",
-        "firebase-tools": "7.3.1",
-        "serve": "11.1.0",
-        "ts-node": "8.3.0",
-        "tslint": "5.19.0",
-        "typescript": "3.4.5"
-    }
+        "firebase-tools": "7.10.0"
+    },
+    "private": true
 }

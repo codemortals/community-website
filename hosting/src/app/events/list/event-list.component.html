@@ -1,0 +1,15 @@
+<cm-page-header>
+    <h2>Upcoming Events</h2>
+    <button *cmAuthenticated rock-stroked-button type="button" [routerLink]="['/events', 'create']">Add Event</button>
+</cm-page-header>
+
+<div class="event-list">
+    <ng-container *ngFor="let event of events">
+        <div class="event" [routerLink]="['/events', event.uid]">
+            <h3>{{ event.title }}</h3>
+            <p class="event__dates">{{ event.dateStart.toDate() | date }}</p>
+            <p>{{ event.type }} at {{ event.venue.name }}</p>
+        </div>
+    </ng-container>
+</div>
+

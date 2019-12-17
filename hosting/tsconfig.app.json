@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "paths": {
+            "@cm/design/*": [
+                "src/design/*"
+            ],
+            "@cm/environments/*": [
+                "src/environments/*"
+            ],
+            "@cm/*": [
+                "src/core/*"
+            ]
+        }
+    }
+}
