@@ -32,7 +32,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:10
+      - image: cypress/base:10
     steps:
       - checkout
       - restore_cache:
@@ -41,7 +41,8 @@ jobs:
       - run: sed -i 's|{{ APP_ID }}|'${APP_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ AUTH_DOMAIN }}|'${AUTH_DOMAIN}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ DATABASE_URL }}|'${DATABASE_URL}'|g' hosting/src/environments/environment.prod.ts
-      - run: sed -i 's|{{ GA_CODE }}|'${GA_CODE}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ GOOGLE_ANALYTICS_CODE }}|'${GOOGLE_ANALYTICS_CODE}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ GOOGLE_MAPS_KEY }}|'${GOOGLE_MAPS_KEY}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ MESSAGE_SENDER_ID }}|'${MESSAGE_SENDER_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ PROJECT_ID }}|'${PROJECT_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ STORAGE_BUCKET }}|'${STORAGE_BUCKET}'|g' hosting/src/environments/environment.prod.ts
