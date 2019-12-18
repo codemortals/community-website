@@ -5,13 +5,17 @@ import { Observable } from 'rxjs';
 
 import { GooglePlaceFind, GooglePlaceSearch } from '@cm/models';
 
+import { environment } from '@cm/environments/environment';
+
 @Injectable()
 export class GooglePlacesService {
 
     constructor(
         private fireFunctions: AngularFireFunctions
     ) {
-        this.fireFunctions.functions.useFunctionsEmulator('http://localhost:5000');
+        if (!environment.production) {
+            this.fireFunctions.functions.useFunctionsEmulator('http://localhost:5000');
+        }
     }
 
     public searchPlace(placeName: string, type: string, sessionId: string): Observable<GooglePlaceSearch> {
