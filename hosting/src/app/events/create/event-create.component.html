@@ -30,22 +30,22 @@
         <rock-error [control]="eventForm.get('venue')"></rock-error>
     </rock-autocomplete>
 
-    <div formArrayName="dates" *ngFor="let date of eventForm.get('dates').controls; let i = index;">
+    <div formArrayName="dates" *ngFor="let date of formDates.controls; let i = index;">
         <div class="event-dates" [formGroupName]="i">
             <rock-date-picker [label]="'Day ' + (i + 1)" name="date" formControlName="date" [minimum]="getToday()" [required]="true">
-                <rock-error [control]="eventForm.get('dates').controls[i].get('date')"></rock-error>
+                <rock-error [control]="formDates.controls[i].get('date')"></rock-error>
             </rock-date-picker>
 
             <rock-time-picker label="Start Time" [init]="initialTime" formControlName="timeStart" [required]="true">
-                <rock-error [control]="eventForm.get('dates').controls[i].get('timeStart')"></rock-error>
+                <rock-error [control]="formDates.controls[i].get('timeStart')"></rock-error>
             </rock-time-picker>
 
             <rock-time-picker label="End Time" [init]="initialTime" formControlName="timeEnd" [required]="true">
-                <rock-error [control]="eventForm.get('dates').controls[i].get('timeEnd')"></rock-error>
+                <rock-error [control]="formDates.controls[i].get('timeEnd')"></rock-error>
             </rock-time-picker>
 
             <div class="date-actions">
-                <button rock-button type="button" (click)="removeDate(i)" [disabled]="eventForm.get('dates').controls.length <= 1">
+                <button rock-button type="button" (click)="removeDate(i)" [disabled]="formDates.length <= 1">
                     <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>
                 </button>
             </div>

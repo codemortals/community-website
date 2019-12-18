@@ -51,16 +51,17 @@ export class EventCreateComponent implements OnInit {
         });
     }
 
+    get formDates(): FormArray {
+        return <FormArray> this.eventForm.get('dates');
+    }
+
     public addDate(): void {
-        const dates = <FormArray> this.eventForm.get('dates');
-        dates.push(this.createDate());
+        this.formDates.push(this.createDate());
     }
 
     public removeDate(index: number): void {
-        const dates = <FormArray> this.eventForm.get('dates');
-
-        if (dates.length > 1) {
-            dates.removeAt(index);
+        if (this.formDates.length > 1) {
+            this.formDates.removeAt(index);
         }
     }
 
