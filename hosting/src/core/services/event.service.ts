@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import * as firebase from 'firebase';
 
 import { Observable, from, forkJoin } from 'rxjs';
-import { map, mergeMap, take } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 
 import { Event, UserProfile } from '@cm/models';
 
@@ -15,7 +14,8 @@ export class EventService {
 
     constructor(
         private firestore: AngularFirestore,
-    ) { }
+    ) {
+    }
 
     public create(event: Event): Observable<Event> {
         const events = this.firestore.collection<Event>('events');
@@ -37,7 +37,7 @@ export class EventService {
                 mergeMap((event) =>
                     forkJoin(
                         ...event.organisers.map((organiser: string) => this.firestore.collection<UserProfile>('users').doc<UserProfile>(organiser).get()
-                            .pipe(map((user: firebase.firestore.DocumentData) => user.data()))
+                            .pipe(map((user: firebase.firestore.DocumentData) => user.data())),
                         ),
                     )
                         .pipe(
@@ -48,24 +48,20 @@ export class EventService {
             );
     }
 
-    public findAll(): Observable<Array<Event>> {
-        const events = this.firestore.collection<Event>('events', (ref) => ref.orderBy('dateStart'));
+    public findAll(startDate?: Date, endDate?: Date): Observable<Array<Event>> {
+        const events = this.firestore.collection<Event>(
+            'events',
+            (ref: firebase.firestore.Query) => {
+                if (startDate) {
+                    ref = ref.where('dateEnd', '>', startDate);
+                }
+                if (endDate) {
+                    ref = ref.where('dateEnd', '<=', endDate);
+                }
+                return ref.orderBy('dateEnd');
+            },
+        );
         return events.valueChanges();
-    }
-
-}
-
-@Injectable({
-    providedIn: 'root',
-})
-export class EventServiceResolve implements Resolve<Array<Event>> {
-
-    constructor(
-        private eventService: EventService,
-    ) { }
-
-    public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<Event>> {
-        return this.eventService.findAll().pipe(take(1));
     }
 
 }

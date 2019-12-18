@@ -11,7 +11,7 @@ export const GooglePlacesSearch = functions.https.onCall(async (data: any, conte
     const type = data.type;
 
     const method = 'POST';
-    const uri = `https://maps.googleapis.com/maps/api/place/autocomplete/json`;
+    const uri = 'https://maps.googleapis.com/maps/api/place/autocomplete/json';
     const qs = {
         key: functions.config().google.places_key,
         input: value,
@@ -39,7 +39,7 @@ export const GooglePlacesFind = functions.https.onCall(async (data: any, context
     }
 
     const method = 'POST';
-    const uri = `https://maps.googleapis.com/maps/api/place/details/json`;
+    const uri = 'https://maps.googleapis.com/maps/api/place/details/json';
     const qs = {
         key: functions.config().google.places_key,
         place_id: placeId,

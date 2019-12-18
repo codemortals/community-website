@@ -7,5 +7,4 @@ typings/
 node_modules/
 
 # Firebase
-.runtimeconfig.json
 firebase-debug.log

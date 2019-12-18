@@ -56,7 +56,10 @@ export class EventViewComponent implements OnInit, AfterViewInit {
             center: latLng,
             mapTypeId: 'roadmap',
             styles: styleTypes,
-            mapTypeControlOptions: { mapTypeIds: [] }
+            mapTypeControl: false,
+            streetViewControl: false,
+            fullscreenControl: false,
+            gestureHandling: 'none'
         };
         this.map = new this.google.maps.Map(this.googleMap.nativeElement, mapOptions);
 
@@ -64,16 +67,16 @@ export class EventViewComponent implements OnInit, AfterViewInit {
         const position = latLng;
         const title = this.event.venue.name;
 
-        const marker = new this.google.maps.Marker({ map, position, title });
-        const info = new this.google.maps.InfoWindow({
-            content: this.eventAddress.nativeElement,
-        });
-
-        marker.addListener('click', () => {
-            info.open(map, marker);
-        });
-        info.open(map, marker);
-        this.eventAddress.nativeElement.remove();
+        return new this.google.maps.Marker({ map, position, title });
+        // const info = new this.google.maps.InfoWindow({
+        //     content: this.eventAddress.nativeElement,
+        // });
+        //
+        // marker.addListener('click', () => {
+        //     info.open(map, marker);
+        // });
+        // info.open(map, marker);
+        // this.eventAddress.nativeElement.remove();
     }
 
 }

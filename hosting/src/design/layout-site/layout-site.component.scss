@@ -18,8 +18,14 @@
             align-items: center;
             justify-content: space-between;
             color: #f8f0ee;
-            width: 800px;
-            padding: 0.5rem;
+            width: 100%;
+            max-width: 980px;
+            padding: 0.2rem 1rem;
+
+            .brand {
+                font-size: 2rem;
+                font-weight: 300;
+            }
 
             fa-icon {
                 margin-right: 0.4em;
@@ -35,15 +41,17 @@
 
         .container {
             display: flex;
-            width: calc(800px + 1rem);
+            width: 100%;
+            max-width: calc(980px + 1rem);
 
             > * {
                 display: inline-block;
-                padding: 0.5rem;
+                padding: 0.5rem 1rem;
                 color: #009eaf;
             }
 
             a, button {
+                font-weight: 300;
                 text-decoration: none;
 
                 &:hover, &.active {
@@ -61,8 +69,9 @@
         padding-bottom: 3rem;
 
         .container {
-            width: 800px;
-            padding: 0.5rem;
+            width: 100%;
+            max-width: 980px;
+            padding: 0 1rem;
         }
     }
 
@@ -74,7 +83,8 @@
 
         .container {
             display: grid;
-            width: 800px;
+            width: 100%;
+            max-width: 980px;
             padding: 1rem;
             color: #f8f0ee;
             grid-gap: 1rem;

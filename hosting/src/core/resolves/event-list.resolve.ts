@@ -17,7 +17,7 @@ export class EventListResolve implements Resolve<Array<Event>> {
     ) { }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<Event>> {
-        return this.eventService.findAll().pipe(take(1));
+        return this.eventService.findAll(route.data.startDate).pipe(take(1));
     }
 
 }

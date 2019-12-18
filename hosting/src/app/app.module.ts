@@ -7,11 +7,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-
 import { RoutingModule } from './routing.module';
-import { environment } from '../environments/environment';
 
 import { GooglePlacesService } from '@cm/services';
+import { environment } from '@cm/environments/environment';
 
 @NgModule({
     declarations: [

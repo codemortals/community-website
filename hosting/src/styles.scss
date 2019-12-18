@@ -14,51 +14,33 @@ html, body {
 h1, h2, h3, h4, h5 {
     padding: 0;
     margin: 0;
+    font-weight: 500;
+    line-height: 1.8em;
 }
 
 h1 {
-    font-size: 2em;
-    font-weight: 300;
-    line-height: 1.4em;
-
-    &.display-1 {
-        margin: 0.5rem 0 1rem;
-    }
+    font-size: 2.4em;
 }
 
 h2 {
-    font-size: 1.6em;
-    font-weight: 300;
-    line-height: 1.4em;
-
-    &.display-1 {
-        margin: 0.5em 0;
-    }
+    font-size: 1.3em;
 }
 
 h3 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 300;
-    line-height: 1.4em;
-
-    &.display-1 {
-        margin: 0.5em 0;
-    }
 }
 
 h4 {
     font-size: 1em;
-    font-weight: 500;
-    line-height: 1.4em;
-
-    &.display-1 {
-        margin: 0.5em 0;
-    }
+    font-weight: 300;
 }
 
 a {
     color: #009eaf;
+    font-weight: 500;
     line-height: normal;
+    text-decoration: none;
 
     &:hover {
         color: #00b8cc;

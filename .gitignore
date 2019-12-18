@@ -3,6 +3,7 @@
 # project local files
 *.local.ts
 *.local.txt
+.runtimeconfig.json
 
 # dependencies
 node_modules

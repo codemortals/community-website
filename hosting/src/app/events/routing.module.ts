@@ -29,6 +29,9 @@ const routes: Routes = [
             {
                 path: '',
                 component: EventListComponent,
+                data: {
+                    startDate: new Date()
+                },
                 resolve: {
                     events: EventListResolve
                 }

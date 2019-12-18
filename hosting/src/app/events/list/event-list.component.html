@@ -6,9 +6,19 @@
 <div class="event-list">
     <ng-container *ngFor="let event of events">
         <div class="event" [routerLink]="['/events', event.uid]">
+            <p class="event__date">{{ event.dateStart.toDate() | date: 'EEEE, d MMMM' }} at {{ event.dateStart.toDate() | date: 'HH:mm' }}</p>
             <h3>{{ event.title }}</h3>
-            <p class="event__dates">{{ event.dateStart.toDate() | date }}</p>
-            <p>{{ event.type }} at {{ event.venue.name }}</p>
+            <div class="event__location">
+                <span [ngSwitch]="event.type">
+                    <ng-container *ngSwitchCase="'meetup'">Meet-up at</ng-container>
+                    <ng-container *ngSwitchCase="'workshop'">Workshop at</ng-container>
+                    <ng-container *ngSwitchCase="'conference'">Conference at</ng-container>
+                    <ng-container *ngSwitchCase="'hackathon'">Hackathon at</ng-container>
+                    <ng-container *ngSwitchCase="'stream'">Online Stream from</ng-container>
+                    <ng-container *ngSwitchDefault>Event</ng-container>
+                </span>
+                {{ event.venue.name }}
+            </div>
         </div>
     </ng-container>
 </div>

@@ -31,13 +31,18 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import {
+    far,
+    faClock,
+} from '@fortawesome/free-regular-svg-icons';
+
+import {
     fas,
     faChalkboardTeacher,
     faCheck,
-    faExternalLinkAlt,
-    faGlobe,
-    faLaptop,
     faHeartbeat,
+    faLaptop,
+    faLink,
+    faMapMarkerAlt,
     faTrashAlt,
     faUsers,
 } from '@fortawesome/free-solid-svg-icons';
@@ -83,14 +88,15 @@ import {
 })
 export class DesignModule {
     constructor(library: FaIconLibrary) {
-        library.addIconPacks(fas, fab);
+        library.addIconPacks(fab, far, fas);
         library.addIcons(
             faChalkboardTeacher,
             faCheck,
-            faExternalLinkAlt,
-            faGlobe,
-            faLaptop,
+            faClock,
             faHeartbeat,
+            faLaptop,
+            faLink,
+            faMapMarkerAlt,
             faTrashAlt,
             faUsers,
             faGithub,

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DesignModule } from '../../design/design.module';
+import { DesignModule } from '@cm/design/design.module';
 
 import { ErrorComponent } from './error.component';
 import { NotFoundComponent } from './not-found/not-found.component';

@@ -29,8 +29,8 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.scss",
-                            "node_modules/normalize.css/normalize.css"
+                            "node_modules/normalize.css/normalize.css",
+                            "src/styles.scss"
                         ],
                         "scripts": [
                             "node_modules/marked/lib/marked.js"

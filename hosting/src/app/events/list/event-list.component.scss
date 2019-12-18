@@ -10,9 +10,12 @@
     border-bottom-left-radius: 10px;
     border: 1px solid rgba(0,158,175,0.4);
 
-    &__dates {
-        font-size: 0.8rem;
+    &__date {
         margin: 0;
+    }
+
+    &__location {
+        font-size: 0.8rem;
     }
 
     &:after {

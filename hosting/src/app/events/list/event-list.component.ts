@@ -29,7 +29,7 @@ export class EventListComponent implements OnDestroy, OnInit {
     public ngOnInit(): void {
         this.events = this.route.snapshot.data.events;
 
-        this.eventService.findAll()
+        this.eventService.findAll(new Date())
             .pipe(takeUntil(this.isDestroyed))
             .subscribe((events) => this.events = events);
     }
