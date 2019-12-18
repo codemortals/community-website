@@ -37,17 +37,16 @@ jobs:
       - checkout
       - restore_cache:
           key: dependencies-{{ .Revision }}
-      - run: sed -i 's|{{ API_KEY }}|'${API_KEY}'|g' hosting/src/environments/environment.prod.ts
+      - run: sed -i 's|{{ PUBLIC_API_KEY }}|'${PUBLIC_API_KEY}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ APP_ID }}|'${APP_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ AUTH_DOMAIN }}|'${AUTH_DOMAIN}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ DATABASE_URL }}|'${DATABASE_URL}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ GOOGLE_ANALYTICS_CODE }}|'${GOOGLE_ANALYTICS_CODE}'|g' hosting/src/environments/environment.prod.ts
-      - run: sed -i 's|{{ GOOGLE_MAPS_KEY }}|'${GOOGLE_MAPS_KEY}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ MESSAGE_SENDER_ID }}|'${MESSAGE_SENDER_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ PROJECT_ID }}|'${PROJECT_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ STORAGE_BUCKET }}|'${STORAGE_BUCKET}'|g' hosting/src/environments/environment.prod.ts
       - run: (cd hosting; npm run build:prod)
-      - run: npx firebase functions:config:set google.places_key=$GOOGLE_PLACES_KEY --token $FIREBASE_KEY
+      - run: npx firebase functions:config:set google.places_key=$PRIVATE_API_KEY --token $FIREBASE_KEY
       - run: npx firebase deploy --project codemortals-website --token $FIREBASE_KEY
 
 workflows:
