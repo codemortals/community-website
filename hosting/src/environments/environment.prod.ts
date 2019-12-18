@@ -9,8 +9,5 @@ export const environment = {
         messagingSenderId: '{{ MESSAGE_SENDER_ID }',
         appId: '{{ APP_ID }}',
     },
-    google: {
-        maps: '{{ GOOGLE_MAPS_KEY }}',
-        analytics: '{{ GOOGLE_ANALYTICS_CODE }}'
-    }
+    tracking: '{{ GOOGLE_ANALYTICS_CODE }}'
 };

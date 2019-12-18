@@ -18,8 +18,5 @@ export const environment = {
         messagingSenderId: 'messagingSenderId',
         appId: 'appId',
     },
-    google: {
-        maps: 'mapsKey',
-        analytics: 'analyticsCode'
-    }
+    tracking: ''
 };
