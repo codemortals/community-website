@@ -61,6 +61,6 @@ workflows:
           context: website-production
           requires:
             - test-ui
-#          filters:
-#            branches:
-#              only: master
+          filters:
+            branches:
+              only: master
