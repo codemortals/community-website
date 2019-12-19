@@ -1,15 +1,26 @@
+@import '../../../variables';
+
+h2 {
+    text-align: center;
+}
+
 section {
     display: flex;
     flex-direction: column;
     margin: 2em 0;
 
     .mascot {
+        padding-bottom: 1em;
         text-align: center;
     }
 }
 
 
-@media all and (min-width: 420px) {
+@media all and (min-width: $viewport-mobile-min) {
+    h2 {
+        text-align: inherit;
+    }
+
     section {
         &:nth-of-type(even) {
             flex-direction: row-reverse;

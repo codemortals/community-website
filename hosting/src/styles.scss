@@ -1,21 +1,28 @@
+@import 'variables';
+
 html, body {
     position: absolute;
     left: 0;
     right: 0;
     margin: 0;
     height: 100%;
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.2em;
     font-weight: 300;
-    color: #322e2d;
+    color: $brand-background-dark;
     font-family: 'Lato', sans-serif;
-    background-color: lighten(#673ab7, 50);
+    background-color: $brand-background-lighter;
+
+    @media all and (min-width: $viewport-mobile-min) {
+        font-size: 20px;
+    }
 }
 
 h1, h2, h3, h4, h5 {
     padding: 0;
     margin: 0;
     font-weight: 300;
-    line-height: 1.8em;
+    line-height: 1.2em;
 }
 
 h1 {
@@ -36,19 +43,52 @@ h4 {
     font-size: 1em;
 }
 
+ul {
+    margin: 0.6em 0;
+    padding-left: 1.2rem;
+    list-style-type: circle;
+
+    li {
+        margin: 0.4em 0;
+    }
+}
+
 a {
-    color: #009eaf;
-    font-weight: 500;
+    color: $brand-accent-dark;
     line-height: normal;
     text-decoration: none;
 
     &:hover {
-        color: #00b8cc;
+        color: $brand-secondary-dark;
+    }
+
+    &.light {
+        color: $brand-accent-lighter;
+
+        &:hover {
+            color: $brand-secondary-light;
+        }
     }
 }
 
+.cm-subheader {
+    margin-bottom: 0.5em;
+    opacity: 0.8;
+    font-weight: 700;
+    text-shadow: -1px -1px 2px $brand-background-dark;
+    text-transform: uppercase;
+}
+
 .caption {
-    font-size: 0.8em;
+    font-size: 0.9em;
+    color: $brand-background-normal;
+}
+
+.truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 button {
@@ -83,5 +123,17 @@ button {
 }
 
 .flex {
-    flex: 1;
+    flex-grow: 1;
+}
+
+@media all and (max-width: $viewport-mobile-max) {
+    .hide-mobile {
+        display: none;
+    }
+}
+
+@media all and (max-width: $viewport-tablet-max) {
+    .hide-tablet {
+        display: none;
+    }
 }
