@@ -23,18 +23,18 @@ const routes: Routes = [
                 path: ':eventId',
                 component: EventViewComponent,
                 resolve: {
-                    event: EventViewResolve
-                }
+                    event: EventViewResolve,
+                },
             },
             {
                 path: '',
                 component: EventListComponent,
                 data: {
-                    startDate: new Date()
+                    startDate: new Date(),
                 },
                 resolve: {
-                    events: EventListResolve
-                }
+                    events: EventListResolve,
+                },
             },
         ],
     },

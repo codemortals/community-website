@@ -1,8 +1,10 @@
-<h2>Create an Event</h2>
-<p>
-    Please provide the details of the event you are attending or hosting. These events are publicly visible to all users
-    and added to their calendars. Make sure to check your event has not been previously added by another member.
-</p>
+<cm-page-header>
+    <h2>Create an Event</h2>
+    <div>
+        Please provide the details of the event you are attending or hosting. These events are publicly visible to all users
+        and added to their calendars. Make sure to check your event has not been previously added by another member.
+    </div>
+</cm-page-header>
 
 <form (submit)="createEvent()" [formGroup]="eventForm">
 

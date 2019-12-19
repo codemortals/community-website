@@ -26,7 +26,7 @@
     @media all and (min-width: 720px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: " date remove " " time-1 time-2 ";
+        grid-template-areas: "date remove" "time-1 time-2";
         column-gap: 2rem;
     }
 

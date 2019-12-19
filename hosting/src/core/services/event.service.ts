@@ -14,8 +14,7 @@ export class EventService {
 
     constructor(
         private firestore: AngularFirestore,
-    ) {
-    }
+    ) { }
 
     public create(event: Event): Observable<Event> {
         const events = this.firestore.collection<Event>('events');

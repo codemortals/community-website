@@ -24,9 +24,6 @@ export class EventViewComponent implements OnInit, AfterViewInit {
     @ViewChild('googleMap', { static: false })
     public googleMap: ElementRef;
 
-    @ViewChild('eventAddress', { static: false })
-    public eventAddress: ElementRef<any>;
-
     constructor(
         private route: ActivatedRoute,
     ) { }
@@ -68,15 +65,6 @@ export class EventViewComponent implements OnInit, AfterViewInit {
         const title = this.event.venue.name;
 
         return new this.google.maps.Marker({ map, position, title });
-        // const info = new this.google.maps.InfoWindow({
-        //     content: this.eventAddress.nativeElement,
-        // });
-        //
-        // marker.addListener('click', () => {
-        //     info.open(map, marker);
-        // });
-        // info.open(map, marker);
-        // this.eventAddress.nativeElement.remove();
     }
 
 }

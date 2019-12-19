@@ -1,6 +1,5 @@
 {
-    "name": "codemortals",
-    "version": "0.2.0",
+    "name": "hosting",
     "scripts": {
         "build:test": "ng build",
         "build:prod": "ng build --configuration=production",
