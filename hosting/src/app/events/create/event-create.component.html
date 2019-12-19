@@ -1,0 +1,61 @@
+<cm-page-header>
+    <h2>Create an Event</h2>
+    <div>
+        Please provide the details of the event you are attending or hosting. These events are publicly visible to all users
+        and added to their calendars. Make sure to check your event has not been previously added by another member.
+    </div>
+</cm-page-header>
+
+<form (submit)="createEvent()" [formGroup]="eventForm">
+
+    <rock-select label="Type of event" type="select" formControlName="type" [required]="true">
+        <div rockOption *ngFor="let type of types" [value]="type.value">{{ type.name }}</div>
+    </rock-select>
+
+    <rock-input label="Title / name" type="text" name="title" formControlName="title" [required]="true">
+        <rock-error [control]="eventForm.get('title')"></rock-error>
+    </rock-input>
+
+    <rock-input label="Image (link)" type="text" name="image" formControlName="image">
+        <rock-error [control]="eventForm.get('image')"></rock-error>
+    </rock-input>
+
+    <rock-input label="Website or stream link" placeholder="https://" type="url" name="website" formControlName="website">
+        <rock-error [control]="eventForm.get('website')"></rock-error>
+    </rock-input>
+
+    <rock-input label="Summary" type="textarea" name="summary" formControlName="summary" [required]="true">
+        <rock-error [control]="eventForm.get('summary')"></rock-error>
+    </rock-input>
+
+    <rock-autocomplete label="Venue" type="text" name="venue" formControlName="venue" [search]="searchAddress.bind(this)" [selection]="selectAddress.bind(this)" [required]="true">
+        <rock-error [control]="eventForm.get('venue')"></rock-error>
+    </rock-autocomplete>
+
+    <div formArrayName="dates" *ngFor="let date of formDates.controls; let i = index;">
+        <div class="event-dates" [formGroupName]="i">
+            <rock-date-picker [label]="'Day ' + (i + 1)" name="date" formControlName="date" [minimum]="getToday()" [required]="true">
+                <rock-error [control]="formDates.controls[i].get('date')"></rock-error>
+            </rock-date-picker>
+
+            <rock-time-picker label="Start Time" [init]="initialTime" formControlName="timeStart" [required]="true">
+                <rock-error [control]="formDates.controls[i].get('timeStart')"></rock-error>
+            </rock-time-picker>
+
+            <rock-time-picker label="End Time" [init]="initialTime" formControlName="timeEnd" [required]="true">
+                <rock-error [control]="formDates.controls[i].get('timeEnd')"></rock-error>
+            </rock-time-picker>
+
+            <div class="date-actions">
+                <button rock-button type="button" (click)="removeDate(i)" [disabled]="formDates.length <= 1">
+                    <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button rock-stroked-button type="button" (click)="addDate()">Add another day</button>
+        <button rock-button type="submit" [disabled]="eventForm.pristine || eventForm.invalid">Create</button>
+    </div>
+</form>

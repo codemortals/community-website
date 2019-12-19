@@ -1,0 +1,30 @@
+{
+    "name": "functions",
+    "scripts": {
+        "build": "tsc",
+        "deploy": "firebase deploy --only functions",
+        "lint": "tslint --project tsconfig.json",
+        "logs": "firebase functions:log",
+        "serve": "npm run build && firebase serve --project codemortals-website-develop --only functions",
+        "shell": "npm run build && firebase functions:shell",
+        "start": "npm run serve"
+    },
+    "private": true,
+    "main": "lib/index.js",
+    "engines": {
+        "node": "10"
+    },
+    "dependencies": {
+        "firebase-admin": "8.8.0",
+        "firebase-functions": "3.3.0",
+        "request": "2.88.0",
+        "request-promise-native": "1.0.8",
+        "uuid": "3.3.3"
+    },
+    "devDependencies": {
+        "@types/request-promise-native": "1.0.17",
+        "@types/uuid": "3.4.6",
+        "tslint": "5.20.1",
+        "typescript": "3.7.3"
+    }
+}

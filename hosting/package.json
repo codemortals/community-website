@@ -1,0 +1,58 @@
+{
+    "name": "hosting",
+    "scripts": {
+        "build:test": "ng build",
+        "build:prod": "ng build --configuration=production",
+        "cypress:open": "cypress open",
+        "cypress:run": "cypress run",
+        "lint": "ng lint",
+        "start": "ng serve --configuration=develop --open",
+        "start:test": "serve -s -p 8080 dist",
+        "test": "npm run lint && npm run build:test && concurrently -r -k -s first \"npm run start:test\" \"npm run cypress:run\""
+    },
+    "private": true,
+    "cypress-cucumber-preprocessor": {
+        "commonPath": "common",
+        "step_definitions": "test/step_definitions"
+    },
+    "dependencies": {
+        "@angular/animations": "8.2.14",
+        "@angular/cdk": "8.2.3",
+        "@angular/common": "8.2.14",
+        "@angular/compiler": "8.2.14",
+        "@angular/core": "8.2.14",
+        "@angular/fire": "5.2.3",
+        "@angular/forms": "8.2.14",
+        "@angular/platform-browser": "8.2.14",
+        "@angular/platform-browser-dynamic": "8.2.14",
+        "@angular/router": "8.2.14",
+        "@fortawesome/angular-fontawesome": "0.5.0",
+        "@fortawesome/fontawesome-svg-core": "1.2.26",
+        "@fortawesome/free-brands-svg-icons": "5.12.0",
+        "@fortawesome/free-regular-svg-icons": "5.12.0",
+        "@fortawesome/free-solid-svg-icons": "5.12.0",
+        "@venzra/bedrock": "0.4.0",
+        "firebase": "7.6.0",
+        "marked": "0.7.0",
+        "normalize.css": "8.0.1",
+        "rxjs": "6.5.3",
+        "tslib": "1.10.0",
+        "zone.js": "0.10.2"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "0.803.20",
+        "@angular/cli": "8.3.20",
+        "@angular/compiler-cli": "8.2.14",
+        "@angular/language-service": "8.2.14",
+        "@types/googlemaps": "3.38.1",
+        "@types/node": "12.12.18",
+        "codelyzer": "5.2.0",
+        "concurrently": "5.0.1",
+        "cypress": "3.8.0",
+        "cypress-cucumber-preprocessor": "1.19.0",
+        "serve": "11.2.0",
+        "ts-node": "8.5.4",
+        "tslint": "5.20.1",
+        "typescript": "3.5.3"
+    }
+}

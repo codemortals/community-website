@@ -1,0 +1,7 @@
+# compiled output
+/dist
+
+# Tests
+/cypress
+/test/screenshots
+/test/videos
