@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .layout {
     display: grid;
     grid-template-rows: min-content 1fr min-content;
@@ -12,7 +14,7 @@
         align-items: center;
         justify-items: center;
         justify-content: center;
-        background-color: #322e2d;
+        background-color: $brand-background-dark;
         box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4);
         z-index: 100;
 
@@ -24,7 +26,7 @@
             > *:not(.icon) {
                 display: inline-block;
                 padding: 0.5rem;
-                color: #009eaf;
+                color: $brand-accent-dark;
             }
 
             > .icon {
@@ -32,10 +34,15 @@
             }
 
             a, button {
+                font-weight: 300;
                 text-decoration: none;
 
-                &:hover, &.active {
-                    color: #d64b4b;
+                &:hover {
+                    color: $brand-secondary-normal;
+                }
+
+                &.active {
+                    color: $brand-primary-normal;
                 }
             }
         }
@@ -44,11 +51,11 @@
     .content {
         display: flex;
         flex-direction: row;
-        background-color: #f8f0ee;
+        background-color: $brand-background-lighter;
 
         nav {
             width: 300px;
-            background-color: #322E2D;
+            background-color: $brand-background-dark;
 
             ul {
                 display: flex;
@@ -64,7 +71,7 @@
                     * {
                         display: block;
                         padding: 0.5rem 1rem;
-                        color: #F8F0EE;
+                        color: $brand-background-lighter;
                     }
 
                     span {
@@ -75,11 +82,11 @@
                         text-decoration: none;
 
                         &:hover {
-                            background-color: #827775;
+                            background-color: $brand-background-normal;
                         }
 
                         &.active {
-                            background-color: #D64B4B;
+                            background-color: $brand-primary-dark;
                         }
                     }
                 }
@@ -95,24 +102,24 @@
     .footer {
         display: flex;
         flex-direction: row;
-        background-color: #C7B9B9;
+        background-color: $brand-background-light;
 
         .container {
             display: grid;
             width: 100%;
             padding: 1rem;
-            color: #f8f0ee;
+            color: $brand-background-lighter;
             grid-gap: 1rem;
             grid-auto-rows: min-content;
             grid-auto-flow: column;
             justify-content: flex-end;
 
             a {
-                color: #322E2D;
+                color: $brand-background-dark;
             }
 
             a:hover {
-                color: #D64B4B;
+                color: $brand-primary-dark;
             }
         }
     }

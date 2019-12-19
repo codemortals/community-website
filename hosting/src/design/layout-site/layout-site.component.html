@@ -1,42 +1,60 @@
 <div class="layout">
     <div class="header">
         <div class="container">
-            <div>
-                <h1 class="brand">Code Mortals</h1>
-                <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Agile Methods</p>
-                <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Open Source</p>
-                <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Best Practices</p>
+            <div class="header__content">
+                <h1 class="header__content__brand">Code Mortals</h1>
+                <div class="header__content__values">
+                    <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Agile Methods</p>
+                    <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Open Source</p>
+                    <p><fa-icon [icon]="['fas', 'check']"></fa-icon> Best Practices</p>
+                </div>
+                <a class="header__content__mascot" [routerLink]="['/']"><img src="/assets/mascot/1.png"></a>
             </div>
-            <a [routerLink]="['/']"><img src="/assets/mascot/1.png"></a>
         </div>
     </div>
 
     <div class="navigation" role="navigation">
         <div class="container">
-            <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-            <a [routerLink]="['/events']" routerLinkActive="active">Events</a>
-            <span class="flex"></span>
-            <ng-container *ngIf="account">
-                <a [routerLink]="['/account', 'profile']">{{ account.alias }}</a>
-                <button (click)="logout()">Logout</button>
-            </ng-container>
-            <button (click)="login()" *ngIf="!account">Login</button>
+            <div class="navigation__content">
+                <a title="Home" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><fa-icon [icon]="['fas', 'home']"></fa-icon><span class="hide-tablet">Home</span></a>
+                <a title="Events" [routerLink]="['/events']" routerLinkActive="active">Events</a>
+                <span class="flex"></span>
+                <ng-container *ngIf="account">
+                    <a title="Your account" [routerLink]="['/account', 'profile']"><fa-icon [icon]="['fas', 'user-circle']"></fa-icon><span class="hide-mobile">{{ account.alias }}</span></a>
+                    <button (click)="logout()" title="Logout"><fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon><span class="hide-tablet">Logout</span></button>
+                </ng-container>
+                <button (click)="login()" *ngIf="!account" title="Login / Sign Up"><fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon><span class="hide-mobile">Login / Sign Up</span></button>
+            </div>
         </div>
     </div>
 
-    <div class="content">
+    <div class="main">
         <div class="container">
-            <ng-content></ng-content>
+            <div class="main__content">
+                <ng-content></ng-content>
+            </div>
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-            <a href="https://www.github.com/codemortals/" title="GitHub" target="_blank"><fa-icon [icon]="['fab', 'github']" [fixedWidth]="true" size="lg"></fa-icon></a>
-            <a href="https://www.facebook.com/codemortals/" title="Facebook" target="_blank"><fa-icon [icon]="['fab', 'facebook']" [fixedWidth]="true" size="lg"></fa-icon></a>
-            <a href="https://twitter.com/codemortals/" title="Twitter" target="_blank"><fa-icon [icon]="['fab', 'twitter']" [fixedWidth]="true" size="lg"></fa-icon></a>
-            <a href="https://www.instagram.com/codemortals/" title="Instagram" target="_blank"><fa-icon [icon]="['fab', 'instagram']" [fixedWidth]="true" size="lg"></fa-icon></a>
-            <a href="https://www.youtube.com/codemortals?sub_confirmation=1" title="YouTube" target="_blank"><fa-icon [icon]="['fab', 'youtube']" [fixedWidth]="true" size="lg"></fa-icon></a>
+            <div class="footer__content">
+                <div>
+                    <a href="https://www.github.com/codemortals/" title="GitHub" target="_blank"><fa-icon [icon]="['fab', 'github']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/codemortals/" title="Facebook" target="_blank"><fa-icon [icon]="['fab', 'facebook']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                </div>
+                <div>
+                    <a href="https://twitter.com/codemortals/" title="Twitter" target="_blank"><fa-icon [icon]="['fab', 'twitter']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/codemortals/" title="Instagram" target="_blank"><fa-icon [icon]="['fab', 'instagram']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/codemortals?sub_confirmation=1" title="YouTube" target="_blank"><fa-icon [icon]="['fab', 'youtube']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

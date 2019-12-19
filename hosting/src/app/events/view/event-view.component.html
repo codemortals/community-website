@@ -16,63 +16,53 @@
 <div class="event">
     <div class="details">
         <div *ngIf="event.image" class="details__image" [style.backgroundImage]="'url(' + event.image + ')'"></div>
-
-        <h2>Details</h2>
         <p [rockMarkdown]="event.summary" headers="simple"></p>
     </div>
 
-    <aside>
-        <section>
-            <h2>Highlights</h2>
-            <div class="info">
-                <div class="info__item" *ngFor="let date of event.dates">
-                    <fa-icon [icon]="['far', 'clock']" size="lg" [fixedWidth]="true"></fa-icon>
-                    <div class="info__item__content">
-                        <div>
-                            <div><strong>{{ date.start.toDate() | date: 'EEEE, d MMMM yyyy' }}</strong></div>
-                            <div>{{ date.start.toDate() | date: 'HH:mm' }} to {{ date.end.toDate() | date: 'HH:mm' }}</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="info__item">
-                    <fa-icon [icon]="['fas', 'map-marker-alt']" size="lg" [fixedWidth]="true"></fa-icon>
-                    <div class="info__item__content">
-                        <a class="truncate" [href]="event.venue.url" [title]="event.venue.name" target="_blank">{{ event.venue.name }}</a>
-                        <div class="truncate">{{ event.venue.address.split(',').splice(-2)[0] }}</div>
-                    </div>
-                </div>
-                <div *ngIf="event.website" class="info__item">
-                    <fa-icon [icon]="['fas', 'link']" size="lg" [fixedWidth]="true"></fa-icon>
-                    <div class="info__item__content">
-                        <a class="truncate" [href]="event.website" [title]="event.website" target="_blank">Event Website</a>
-                        <div class="truncate">{{ event.website | lowercase }}</div>
+    <div class="meta">
+        <div class="info">
+            <div class="cm-subheader">Information</div>
+            <div class="info__item" *ngFor="let date of event.dates">
+                <fa-icon [icon]="['far', 'clock']" size="lg" [fixedWidth]="true"></fa-icon>
+                <div class="info__item__content">
+                    <div>
+                        <div><strong>{{ date.start.toDate() | date: 'EEEE, d MMMM yyyy' }}</strong></div>
+                        <div>{{ date.start.toDate() | date: 'HH:mm' }} to {{ date.end.toDate() | date: 'HH:mm' }}</div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section>
-            <h2 [ngPlural]="event.organisers.length">
-                <ng-template ngPluralCase="=1">Organiser</ng-template>
-                <ng-template ngPluralCase="other">Organisers ({{ event.organisers.length }})</ng-template>
-            </h2>
-            <div class="organisers">
-                <div class="organisers__entry" *ngFor="let organiser of event.organisers">
-                    <div class="organisers__entry__container">
-                        <img [src]="organiser.avatar">
-                        <div>{{ organiser.alias }}</div>
-                    </div>
+            <div class="info__item">
+                <fa-icon [icon]="['fas', 'map-marker-alt']" size="lg" [fixedWidth]="true"></fa-icon>
+                <div class="info__item__content">
+                    <a class="light truncate" [href]="event.venue.url" [title]="event.venue.name" target="_blank">{{ event.venue.name }}</a>
+                    <div class="truncate">{{ event.venue.address.split(',').splice(-2)[0] }}</div>
                 </div>
             </div>
-        </section>
-    </aside>
-</div>
+            <div *ngIf="event.website" class="info__item">
+                <fa-icon [icon]="['fas', 'link']" size="lg" [fixedWidth]="true"></fa-icon>
+                <div class="info__item__content">
+                    <a class="light truncate" [href]="event.website" [title]="event.website" target="_blank">Event Website</a>
+                    <div class="truncate">{{ event.website | lowercase }}</div>
+                </div>
+            </div>
+        </div>
 
-<h2>Location</h2>
-<div class="map">
-    <div class="map__image" #googleMap></div>
-    <div class="map__address">
-        <div class="map__address__header">{{ event.venue.name }}</div>
-        <div *ngFor="let line of event.venue.address.split(',')">{{ line }}</div>
+        <div class="organisers">
+            <div class="cm-subheader">Organisers</div>
+            <div class="organisers__container">
+                <div class="organisers__container__entry" *ngFor="let organiser of event.organisers">
+                    <img [src]="organiser.avatar">
+                    <div>{{ organiser.alias }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map">
+        <div class="map__image" #googleMap></div>
+        <div class="map__address">
+            <div class="map__address__header cm-subheader">{{ event.venue.name }}</div>
+            <div *ngFor="let line of event.venue.address.split(',')">{{ line }}</div>
+        </div>
     </div>
 </div>

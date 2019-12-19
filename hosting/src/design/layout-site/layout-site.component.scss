@@ -1,104 +1,142 @@
+@import '../../variables';
+
 .layout {
     display: grid;
     grid-template-rows: min-content min-content 1fr min-content;
     grid-template-columns: 100%;
-    font-size: 0.9em;
-    line-height: 1.2em;
     height: 100%;
 
-    .header {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: #009eaf;
-        box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.1), 0 2px 4px 2px rgba(0, 0, 0, 0.3);
+    .container {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+}
 
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: #f8f0ee;
-            width: 100%;
-            max-width: 980px;
-            padding: 0.2rem 1rem;
+.header {
+    background-color: $brand-accent-dark;
 
-            .brand {
-                font-size: 2rem;
-                font-weight: 300;
-            }
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "brand brand" "values mascot";
+        color: $brand-background-lighter;
+        padding: 0.2em 1rem 0.4em;
+
+        &__brand {
+            grid-area: brand;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 0.5em 0;
+        }
+
+        &__values {
+            grid-area: values;
 
             fa-icon {
                 margin-right: 0.4em;
             }
         }
-    }
 
-    .navigation {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: #322e2d;
+        &__mascot {
+            grid-area: mascot;
+            max-height: 140px;
 
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: calc(980px + 1rem);
+            img {
+                max-height: 100%;
+            }
+        }
 
-            > * {
-                display: inline-block;
-                padding: 0.5rem 1rem;
-                color: #009eaf;
+        @media all and (min-width: $viewport-mobile-min) {
+            grid-template-areas: "brand mascot" "values mascot";
+
+            &__brand {
+                text-align: inherit;
             }
 
-            a, button {
-                font-weight: 300;
-                text-decoration: none;
-
-                &:hover, &.active {
-                    color: #d64b4b;
-                }
+            &__mascot {
+                max-height: inherit;
             }
         }
     }
+}
 
-    .content {
+.navigation {
+    display: flex;
+    flex-direction: row;
+    line-height: 1em;
+    justify-content: center;
+    background-color: $brand-background-dark;
+
+    &__content {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: #f8f0ee;
-        padding-bottom: 3rem;
+        padding: 0.5rem;
 
-        .container {
-            width: 100%;
-            max-width: 980px;
-            padding: 0 1rem;
+        > * {
+            color: $brand-accent-normal;
+            margin: 0 0.5rem;
+        }
+
+        fa-icon + span {
+            margin-left: 0.4em;
+        }
+
+        a, button {
+            font-weight: 300;
+            text-decoration: none;
+
+            &:hover {
+                color: $brand-secondary-normal;
+            }
+
+            &.active {
+                color: $brand-primary-normal;
+            }
         }
     }
+}
 
-    .footer {
-        display: flex;
-        flex-direction: row;
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 3rem;
+
+    &__content {
+        padding: 0.2rem 1rem;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: $brand-background-light;
+
+    &__content {
+        display: grid;
+        grid-gap: 1rem;
+        grid-auto-columns: 1fr;
+        grid-auto-flow: column;
         justify-content: center;
-        background-color: #C7B9B9;
+        padding: 1rem;
 
-        .container {
-            display: grid;
-            width: 100%;
-            max-width: 980px;
-            padding: 1rem;
-            color: #f8f0ee;
-            grid-gap: 1rem;
-            grid-auto-rows: min-content;
-            grid-auto-flow: column;
-            justify-content: flex-end;
+        > * {
+            text-align: center;
 
             a {
-                color: #322E2D;
+                color: $brand-background-dark;
             }
 
             a:hover {
-                color: #D64B4B;
+                color: $brand-primary-normal;
             }
+        }
+
+        @media all and (min-width: $viewport-mobile-min) {
+            grid-auto-columns: min-content;
+            justify-content: flex-end;
         }
     }
 }
