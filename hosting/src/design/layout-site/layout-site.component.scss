@@ -18,8 +18,9 @@
 
     &__content {
         display: grid;
+        grid-template-areas: "brand brand"
+                             "values mascot";
         grid-template-columns: 1fr auto;
-        grid-template-areas: "brand brand" "values mascot";
         color: $brand-background-lighter;
         padding: 0.2em 1rem 0.4em;
 
@@ -33,6 +34,10 @@
 
         &__values {
             grid-area: values;
+            display: grid;
+            grid-template-rows: min-content min-content min-content;
+            grid-gap: 0.5em;
+            align-content: center;
 
             fa-icon {
                 margin-right: 0.4em;
@@ -49,7 +54,9 @@
         }
 
         @media all and (min-width: $viewport-mobile-min) {
-            grid-template-areas: "brand mascot" "values mascot";
+            grid-template-areas: "brand mascot"
+                                 "values mascot";
+            grid-template-rows: auto 1fr;
 
             &__brand {
                 text-align: inherit;
