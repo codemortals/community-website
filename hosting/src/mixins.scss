@@ -1,0 +1,45 @@
+@import './variables';
+
+@mixin box($size: 0.75em) {
+    padding: $size;
+    border-radius: 0.6em;
+};
+
+@mixin card($size: 0.75em) {
+    @include box($size);
+
+    color: $brand-background-dark;
+    background-color: $brand-background-lighter;
+    box-shadow: inset 3px 3px 4px $brand-background-dark;
+}
+
+@mixin panel($size: 0.75em) {
+    @include box($size);
+
+    color: $brand-background-lighter;
+    background-color: $brand-background-normal;
+};
+
+@mixin link($padding-vert: 0px, $padding-horiz: 0px) {
+    text-decoration: none;
+    color: $brand-secondary-dark;
+    border: 1px solid $brand-secondary-dark;
+    padding: $padding-vert $padding-horiz;
+    background: linear-gradient(180deg, transparentize($brand-secondary-lighter, 0.95) 0%, transparentize($brand-secondary-lighter, 0.8) 100%);
+
+    &:hover {
+        cursor: pointer;
+        color: $brand-secondary-dark;
+        border: 2px solid $brand-secondary-dark;
+        padding: calc(#{$padding-vert} - 1px) calc(#{$padding-horiz} - 1px);
+        background: linear-gradient(0deg, transparentize($brand-secondary-normal, 0.8) 0%, transparentize($brand-secondary-normal, 0.65) 100%);
+    }
+
+    &.active {
+        cursor: default;
+        color: $brand-accent-dark;
+        border: 2px solid $brand-accent-dark;
+        padding: calc(#{$padding-vert} - 1px) calc(#{$padding-horiz} - 1px);
+        background: transparentize($brand-accent-normal, 0.9);
+    }
+};

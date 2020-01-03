@@ -25,7 +25,8 @@
                         "preserveSymlinks": true,
                         "aot": false,
                         "assets": [
-                            "src/favicon.ico"
+                            "src/favicon.ico",
+                            "src/assets"
                         ],
                         "styles": [
                             "node_modules/normalize.css/normalize.css",

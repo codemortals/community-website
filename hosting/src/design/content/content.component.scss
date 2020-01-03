@@ -1,0 +1,19 @@
+@import '../../variables';
+
+:host {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &__container {
+        padding: 0 1em;
+
+        @media all and (min-width: $viewport-mobile-min) {
+            padding: 0 1.5em;
+        }
+    }
+}

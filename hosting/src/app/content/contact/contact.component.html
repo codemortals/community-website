@@ -1,0 +1,79 @@
+<cm-content>
+    <cm-page-header>
+        <h2>Get in touch</h2>
+    </cm-page-header>
+
+    <p>Just fill out our short form and lets start the conversation.</p>
+
+    <div class="nudges">
+        <div>
+            <p>Have a question? Ask us anything, we would love to help.</p>
+        </div>
+        <div>
+            <p>Want to find out more about what we do and how we can help?</p>
+        </div>
+        <div>
+            <p>Looking for someone to deliver that next important project?</p>
+        </div>
+        <div>
+            <p>Perhaps give us some feedback or message our community?</p>
+        </div>
+    </div>
+
+    <div class="contact">
+        <div class="contact__info">
+            <img src="https://cdn.codemortals.io/mascot/4.png">
+            <div>
+                <address>
+                    We Work<br>
+                    1 Fore Street Ave<br>
+                    Moorgate<br>
+                    London, EC2Y 9DT
+                </address>
+                <h4>hello@codemortals.io</h4>
+            </div>
+        </div>
+        <div class="contact__form">
+            <form (submit)="sendMessage()" [formGroup]="contactForm" *ngIf="!completed">
+                <rock-input label="Your name" type="text" name="name" formControlName="name" [required]="true">
+                    <rock-error [control]="contactForm.get('name')"></rock-error>
+                </rock-input>
+
+                <rock-input label="Email address" type="text" name="email" formControlName="email" [required]="true">
+                    <rock-error [control]="contactForm.get('email')"></rock-error>
+                </rock-input>
+
+                <rock-input label="Phone number" type="text" name="phone" formControlName="phone">
+                    <rock-error [control]="contactForm.get('phone')"></rock-error>
+                </rock-input>
+
+                <rock-input label="Tell us more" type="textarea" name="message" formControlName="message" [required]="true">
+                    <rock-error [control]="contactForm.get('message')"></rock-error>
+                </rock-input>
+
+                <div class="contact__form__actions">
+                    <button rock-button type="submit" [disabled]="contactForm.pristine || contactForm.invalid">Send</button>
+                </div>
+            </form>
+            <div class="contact__form__confirmation" *ngIf="completed">
+                <div>
+                    <h4>Thank you, we shall respond as soon as possible.</h4>
+                    <p>Please allow up to 12 business hours.</p>
+                    <button rock-button type="button" (click)="resetForm()">Send another?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h4>Big or Small</h4>
+        <p>No matter the size of your business we are happy to work wih you. If you are a startup or blue-chip organisation we have the expertise to suit your needs.</p>
+        <p>Our ability to serve clients across different industries is a testament to our teams. We ensure that everyone receives the same level of service and commitment from us.</p>
+        <p>As one of our clients, you can be sure that, you will be getting the very best that the technology industry has to offer.</p>
+
+        <h4>Realistic rates</h4>
+        <p>We never want to be considered expensive or to have hidden costs. No matter what, we want to build trust, however we also dont want to risk compromising on quality.</p>
+        <p>You can rest assured that our service will be efficient and transparent, a problem shared is a problem halved.</p>
+        <p>Cost should never be an obstacle, we will work with you to create a realistic, yet competitive pricing model that will deliver on your goals.</p>
+    </div>
+</cm-content>

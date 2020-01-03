@@ -1,19 +1,15 @@
+@import '../../../mixins';
 @import '../../../variables';
 
 .event {
+    @include link(0.5rem, 0.5rem);
+
     display: grid;
     grid-gap: 0.5em;
     position: relative;
     margin: 1em 0;
-    padding: calc(0.5rem + 1px);
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    border: 1px solid transparentize($brand-accent-normal, 0.6);
-    background: linear-gradient(90deg, transparentize($brand-accent-normal, 0.975) 0%, transparentize($brand-accent-normal, 0.95) 100%);
-
-    h3 {
-        color: $brand-accent-dark;
-    }
 
     &__date {
         margin: 0;
@@ -30,17 +26,13 @@
         right: 0.75em;
         content: ' ';
         padding: 0.25em;
-        border: solid transparentize($brand-accent-normal, 0.6);
+        border: solid transparentize($brand-secondary-dark, 0.6);
         border-width: 0 0.2em 0.2em 0;
         border-radius: 0.2em;
         transform: rotate(-45deg);
     }
 
     &:hover {
-        cursor: pointer;
-        padding: 0.5rem;
-        border: 2px solid $brand-secondary-normal;
-        background: linear-gradient(90deg, transparentize($brand-secondary-normal, 0.95) 0%, transparentize($brand-secondary-normal, 0.9) 100%);
 
         h3 {
             color: $brand-secondary-dark;

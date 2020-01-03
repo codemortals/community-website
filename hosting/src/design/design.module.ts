@@ -15,6 +15,7 @@ import {
 } from '@venzra/bedrock';
 
 import { AuthenticatedDirective } from './authenticated/authenticated.directive';
+import { ContentComponent } from './content/content.component';
 import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 import { LayoutSiteComponent } from './layout-site/layout-site.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
@@ -33,6 +34,7 @@ import {
 import {
     far,
     faClock,
+    faEnvelope,
 } from '@fortawesome/free-regular-svg-icons';
 
 import {
@@ -54,6 +56,7 @@ import {
 @NgModule({
     declarations: [
         AuthenticatedDirective,
+        ContentComponent,
         LayoutAdminComponent,
         LayoutSiteComponent,
         PageHeaderComponent,
@@ -76,6 +79,7 @@ import {
         CommonModule,
         FontAwesomeModule,
         AuthenticatedDirective,
+        ContentComponent,
         LayoutAdminComponent,
         LayoutSiteComponent,
         PageHeaderComponent,
@@ -97,6 +101,7 @@ export class DesignModule {
             faChalkboardTeacher,
             faCheck,
             faClock,
+            faEnvelope,
             faHeartbeat,
             faHome,
             faLaptop,

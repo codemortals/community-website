@@ -1,6 +1,6 @@
 <div class="layout">
     <div class="header">
-        <div class="container">
+        <cm-content>
             <div class="header__content">
                 <h1 class="header__content__brand">Code Mortals</h1>
                 <div class="header__content__values">
@@ -10,51 +10,51 @@
                 </div>
                 <a class="header__content__mascot" [routerLink]="['/']"><img src="https://cdn.codemortals.io/mascot/1.png"></a>
             </div>
-        </div>
+        </cm-content>
     </div>
 
     <div class="navigation" role="navigation">
-        <div class="container">
+        <cm-content>
             <div class="navigation__content">
                 <a title="Home" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><fa-icon [icon]="['fas', 'home']"></fa-icon><span class="hide-tablet">Home</span></a>
-                <a title="Events" [routerLink]="['/events']" routerLinkActive="active">Events</a>
+                <a title="Events" [routerLink]="['/', 'services']" routerLinkActive="active">Services</a>
+                <a title="Events" [routerLink]="['/', 'events']" routerLinkActive="active">Events</a>
                 <span class="flex"></span>
+                <a title="Get in touch" [routerLink]="['/', 'contact-us']" routerLinkActive="active"><fa-icon [icon]="['far', 'envelope']"></fa-icon><span class="hide-mobile">Contact</span></a>
                 <ng-container *ngIf="account">
-                    <a title="Your account" [routerLink]="['/account', 'profile']"><fa-icon [icon]="['fas', 'user-circle']"></fa-icon><span class="hide-mobile">{{ account.alias }}</span></a>
+                    <a title="Your account" [routerLink]="['/', 'account', 'profile']"><fa-icon [icon]="['fas', 'user-circle']"></fa-icon><span class="hide-mobile">{{ account.alias }}</span></a>
                     <button (click)="logout()" title="Logout"><fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon><span class="hide-tablet">Logout</span></button>
                 </ng-container>
-                <button (click)="login()" *ngIf="!account" title="Login / Sign Up"><fa-icon [icon]="['fas', 'sign-in-alt']"></fa-icon><span class="hide-mobile">Login / Sign Up</span></button>
+                <ng-container *ngIf="!account">
+                    <button title="Login / Sign Up" (click)="login()">Login / Sign Up</button>
+                </ng-container>
             </div>
-        </div>
+        </cm-content>
     </div>
 
     <div class="main">
-        <div class="container">
-            <div class="main__content">
-                <ng-content></ng-content>
-            </div>
-        </div>
+        <ng-content></ng-content>
     </div>
 
     <div class="footer">
-        <div class="container">
+        <cm-content>
             <div class="footer__content">
                 <div>
-                    <a href="https://www.github.com/codemortals/" title="GitHub" target="_blank"><fa-icon [icon]="['fab', 'github']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                    <a href="https://www.github.com/codemortals/" title="GitHub" target="_blank" rel="noreferrer"><fa-icon [icon]="['fab', 'github']" [fixedWidth]="true" size="lg"></fa-icon></a>
                 </div>
                 <div>
-                    <a href="https://www.facebook.com/codemortals/" title="Facebook" target="_blank"><fa-icon [icon]="['fab', 'facebook']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                    <a href="https://www.facebook.com/codemortals/" title="Facebook" target="_blank" rel="noreferrer"><fa-icon [icon]="['fab', 'facebook']" [fixedWidth]="true" size="lg"></fa-icon></a>
                 </div>
                 <div>
-                    <a href="https://twitter.com/codemortals/" title="Twitter" target="_blank"><fa-icon [icon]="['fab', 'twitter']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                    <a href="https://twitter.com/codemortals/" title="Twitter" target="_blank" rel="noreferrer"><fa-icon [icon]="['fab', 'twitter']" [fixedWidth]="true" size="lg"></fa-icon></a>
                 </div>
                 <div>
-                    <a href="https://www.instagram.com/codemortals/" title="Instagram" target="_blank"><fa-icon [icon]="['fab', 'instagram']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                    <a href="https://www.instagram.com/codemortals/" title="Instagram" target="_blank" rel="noreferrer"><fa-icon [icon]="['fab', 'instagram']" [fixedWidth]="true" size="lg"></fa-icon></a>
                 </div>
                 <div>
-                    <a href="https://www.youtube.com/codemortals?sub_confirmation=1" title="YouTube" target="_blank"><fa-icon [icon]="['fab', 'youtube']" [fixedWidth]="true" size="lg"></fa-icon></a>
+                    <a href="https://www.youtube.com/codemortals?sub_confirmation=1" title="YouTube" target="_blank" rel="noreferrer"><fa-icon [icon]="['fab', 'youtube']" [fixedWidth]="true" size="lg"></fa-icon></a>
                 </div>
             </div>
-        </div>
+        </cm-content>
     </div>
 </div>
