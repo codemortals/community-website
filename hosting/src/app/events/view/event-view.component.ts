@@ -1,10 +1,4 @@
-import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    OnInit,
-    ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Event } from '@cm/models';
@@ -13,6 +7,7 @@ import MapTypeStyle = google.maps.MapTypeStyle;
 @Component({
     templateUrl: './event-view.component.html',
     styleUrls: [ './event-view.component.scss' ],
+    encapsulation: ViewEncapsulation.None,
 })
 export class EventViewComponent implements OnInit, AfterViewInit {
 

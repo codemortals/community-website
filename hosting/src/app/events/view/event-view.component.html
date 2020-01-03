@@ -13,10 +13,10 @@
     </div>
 </cm-page-header>
 
-<div class="event">
+<div class="event-view">
     <div class="details">
         <div *ngIf="event.image" class="details__image" [style.backgroundImage]="'url(' + event.image + ')'"></div>
-        <p [rockMarkdown]="event.summary" headers="simple"></p>
+        <p class="details__content" [rockMarkdown]="event.summary"></p>
     </div>
 
     <div class="meta">
@@ -48,7 +48,10 @@
         </div>
 
         <div class="organisers">
-            <div class="cm-subheader">Organisers</div>
+            <div class="cm-subheader" [ngPlural]="event.organisers.length">
+                <ng-template ngPluralCase="=1">Moderator</ng-template>
+                <ng-template ngPluralCase="other">Moderators</ng-template>
+            </div>
             <div class="organisers__container">
                 <div class="organisers__container__entry" *ngFor="let organiser of event.organisers">
                     <img [src]="organiser.avatar">

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= subject %></title>
+
+        <style media="all" type="text/css">
+            html, body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin: 10px;
+                padding: 0;
+                font-size: 14px;
+                background-color: #f8f0ee;
+            }
+
+            h1, h2 {
+                margin: 0;
+                padding: 0 0 0.5em;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                font-weight: 300;
+                padding-bottom: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                font-weight: 500;
+                color: #D64B4B;
+            }
+
+            table {
+                margin: -6px;
+                border-spacing: 6px;
+                border-collapse: separate;
+            }
+
+           section {
+                padding-bottom: 2.5em;
+            }
+
+            .content {
+                padding: 10px;
+                color: #322e2d;
+                background-color: #f8f0ee;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="content">
+            <h1>Contact message from Code Mortals website</h1>
+
+            <section>
+                <h2>Introduction</h2>
+                <div>
+                    <table>
+                        <tr>
+                            <td>name:</td>
+                            <td><%= name %></td>
+                        </tr>
+                        <tr>
+                            <td>email:</td>
+                            <td><%= email %></td>
+                        </tr>
+                        <tr>
+                            <td>phone:</td>
+                            <td><%= phone %></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Message</h2>
+                <div class="message">
+                    <% for(const line of message) { %>
+                        <p><%= line %></p>
+                    <% } %>
+                </div>
+            </section>
+
+            <section>
+                <table>
+                    <tr>
+                        <td width="125">
+                            <img width="110" src="https://cdn.codemortals.io/mascot/2.png" />
+                        </td>
+                        <td>
+                            <table style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px; color: #322E2D">
+                                <tr>
+                                    <td style="font-weight: 700; font-size: 1.25em; padding: 0 0 4px 10px;">Code Mortals</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-left: 4px solid #D64B4B; padding: 2px 0 2px 6px;">
+                                        <span style="font-weight: 300;">email:</span>
+                                        <a style="text-decoration: none; color: #009EAF" href="mailto:team@codemortals.io" target="_blank">team@codemortals.io</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-left: 4px solid #D64B4B; padding: 2px 0 2px 6px;">
+                                        <span style="font-weight: 300;">website:</span>
+                                        <a style="text-decoration: none; color: #009EAF" href="https://codemortals.io" target="_blank">codemortals.io</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 16px 0 0;">
+                                        <a href="https://twitter.com/codemortals"><img width="32" alt="twitter" src="https://cdn.codemortals.io/social/twitter.png"></a>
+                                        <a href="https://youtube.com/codemortals"><img width="32" alt="YouTube" src="https://cdn.codemortals.io/social/youtube.png"></a>
+                                        <a href="https://github.com/codemortals"><img width="32" alt="GitHub" src="https://cdn.codemortals.io/social/github.png"></a>
+                                        <a href="https://instagram.com/codemortals/"><img width="32" alt="Instagram" src="https://cdn.codemortals.io/social/instagram.png"></a>
+                                        <a href="https://linkedin.com/company/codemortals"><img width="32" alt="LinkedIn" src="https://cdn.codemortals.io/social/linkedin.png"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </body>
+</html>

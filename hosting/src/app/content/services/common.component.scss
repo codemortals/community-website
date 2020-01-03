@@ -1,0 +1,51 @@
+@import '../../../variables';
+
+img {
+    border: 2px solid $brand-background-normal;
+    border-radius: $border-radius;
+    max-width: 100%;
+}
+
+section {
+    border-top: 2px dashed $brand-background-light;
+    border-bottom: 2px dashed $brand-background-light;
+    margin: 2em 0;
+}
+
+article {
+    margin: 0;
+    padding: 1.5em 0 1em;
+
+    &:nth-child(even) {
+        color: $brand-background-lighter;
+        background-color: $brand-background-normal;
+    }
+}
+
+.capabilities {
+    display: grid;
+    grid-gap: 1.5em;
+
+    &__entry {
+        display: grid;
+        grid-template-rows: min-content 220px max-content;
+        grid-gap: 0.75em;
+        justify-items: center;
+
+        &__image {
+            width: 100%;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        p {
+            margin: 0;
+            text-align: justify;
+        }
+    }
+
+    @media all and (min-width: $viewport-tablet-min) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

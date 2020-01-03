@@ -3,7 +3,7 @@
  * For the Firebase App Configuration
  *   - Goto console.firebase.google.com
  *   - Create a new or use an existing project
- *   - Goto Project Overview and Add a "Web App" call this as you please for example; Code Mortals Development
+ *   - Goto Project Overview and Add a "Web App" call this as you please for example; CodeMortals Development
  *   - This will provide the required settings you can copy into your local environment file.
 **/
 

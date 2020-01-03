@@ -1,0 +1,53 @@
+<cm-content class="links">
+    <div class="links__items">
+        <a [routerLink]="['/', 'services', 'software']" routerLinkActive="active">Software</a>
+        <a [routerLink]="['/', 'services', 'events']" routerLinkActive="active">Events</a>
+        <a [routerLink]="['/', 'services', 'training']" routerLinkActive="active">Training</a>
+        <a [routerLink]="['/', 'services', 'recruitment']" routerLinkActive="active">Recruitment</a>
+    </div>
+</cm-content>
+
+<div class="service">
+    <router-outlet></router-outlet>
+</div>
+
+<cm-content>
+    <div class="quote">
+        <div>If you have a problem, if no one else can help, and if you can find them, maybe you can hire...</div>
+        <h3>The Code Mortals</h3>
+        <div>
+            <button rock-stroked-button [routerLink]="['/', 'contact-us']">Get in touch</button>
+        </div>
+    </div>
+
+    <div class="info">
+        <h3 class="cm-subheader">Our Clients include...</h3>
+
+        <div class="clients">
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/engine-transformation.png" alt="Engine Transformation">
+            </div>
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/aevi-international.png" alt="AEVI International">
+            </div>
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/national-westminster-bank.png" alt="National Westminster Bank">
+            </div>
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/rentokil-initial.png" alt="Rentokil Initial">
+            </div>
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/ministry-of-justice.png" alt="Ministry of Justice">
+            </div>
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/de-la-rue.png" alt="De La Rue">
+            </div>
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/hm-revenue-and-customs.png" alt="HM Revenue & Customs">
+            </div>
+            <div class="clients__entry">
+                <img src="https://cdn.codemortals.io/clients/marine-management-organisation.png" alt="Marine Management Organisation">
+            </div>
+        </div>
+    </div>
+</cm-content>
