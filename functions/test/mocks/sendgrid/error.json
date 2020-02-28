@@ -1,0 +1,9 @@
+{
+    "errors": [
+        {
+            "message": "Permission denied, wrong credentials",
+            "field": null,
+            "help": null
+        }
+    ]
+}

@@ -7,6 +7,8 @@
         "logs": "firebase functions:log",
         "serve": "npm run build && firebase serve --project codemortals-website-develop --only functions",
         "shell": "npm run build && firebase functions:shell",
+        "test:local": "npm run build && npm run test:cucumber",
+        "test:cucumber": "nyc cucumber-js --require ./test ./test/features --exit",
         "start": "npm run serve"
     },
     "private": true,
@@ -27,7 +29,12 @@
         "@types/ejs": "3.0.0",
         "@types/request-promise-native": "1.0.17",
         "@types/uuid": "3.4.6",
+        "chai": "4.2.0",
         "copyfiles": "2.1.1",
+        "cucumber": "6.0.5",
+        "firebase-functions-test": "0.1.7",
+        "nock": "11.7.1",
+        "nyc": "13.3.0",
         "tslint": "5.20.1",
         "typescript": "3.7.3"
     }

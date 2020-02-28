@@ -4,6 +4,7 @@
 *.local.ts
 *.local.txt
 .runtimeconfig.json
+.coverage
 
 # dependencies
 node_modules

@@ -17,6 +17,17 @@ jobs:
             - functions/node_modules
             - /root/.cache/Cypress
 
+  test-api:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependencies-{{ .Revision }}
+      - run: (cd functions; npm run test)
+      - store_artifacts:
+          path: .coverage
+
   test-ui:
     docker:
       - image: cypress/base:10
@@ -55,12 +66,16 @@ workflows:
   build-deploy:
     jobs:
       - initialise
+      - test-api:
+          requires:
+            - initialise
       - test-ui:
           requires:
             - initialise
       - deploy:
           context: website-production
           requires:
+            - test-api
             - test-ui
           filters:
             branches:

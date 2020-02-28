@@ -4,6 +4,6 @@ interface GooglePlace {
 }
 
 export interface GooglePlaceSearch {
-    uid: string;
+    sessionId: string;
     places: Array<GooglePlace>;
 }

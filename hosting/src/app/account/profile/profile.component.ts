@@ -71,7 +71,7 @@ export class ProfileComponent implements OnInit {
             .searchPlace(searchValue, '(cities)', this.googleSession)
             .pipe(
                 map((result) => {
-                    this.googleSession = result.uid;
+                    this.googleSession = result.sessionId;
                     return result.places.map((place) => ({ id: place.id, text: place.description }));
                 }),
             );
