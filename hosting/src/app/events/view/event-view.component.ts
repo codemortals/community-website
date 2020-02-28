@@ -16,7 +16,7 @@ export class EventViewComponent implements OnInit, AfterViewInit {
 
     private map: google.maps.Map;
 
-    @ViewChild('googleMap', { static: false })
+    @ViewChild('googleMap')
     public googleMap: ElementRef;
 
     constructor(
