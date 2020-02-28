@@ -1,0 +1,18 @@
+{
+    "cache": true,
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": ["lib/**/*.js"],
+    "reporter": ["lcov", "text-summary"],
+    "report-dir": ".coverage",
+    "temp-dir": ".coverage/.nyc_output",
+    "watermarks": {
+        "lines": [90, 100],
+        "statements": [90, 100],
+        "functions": [90, 100],
+        "branches": [90, 100]
+    }
+}

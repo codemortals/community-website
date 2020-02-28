@@ -32,7 +32,11 @@ export const SendGridContactEmail = functions.https.onCall(async (data: any, con
         await send(payload);
         return { done: true };
     } catch (error) {
-        return { done: false, error: error.message };
+        let errorMessage = error.message;
+        if (error.response && error.response.body && error.response.body.errors) {
+            errorMessage = (<Array<Error>> error.response.body.errors).map((error: Error) => error.message).join(', ')
+        }
+        return { done: false, error: errorMessage };
     }
 
 });

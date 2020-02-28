@@ -1,0 +1,28 @@
+{
+    "from": {
+        "email": "team@codemortals.io",
+        "name": "Code Mortals"
+    },
+    "subject": "Contact message from Automated Test",
+    "personalizations": [
+        {
+            "to": [
+                {
+                    "email": "team@codemortals.io"
+                }
+            ],
+            "cc": [
+                {
+                    "email": "test@codemortals.io",
+                    "name": "Automated Test"
+                }
+            ]
+        }
+    ],
+    "content": [
+        {
+            "value": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>Contact message from Automated Test</title>\n\n        <style media=\"all\" type=\"text/css\">\n            html, body {\n                font-family: Verdana, Geneva, Tahoma, sans-serif;\n                margin: 10px;\n                padding: 0;\n                font-size: 14px;\n                background-color: #f8f0ee;\n            }\n\n            h1, h2 {\n                margin: 0;\n                padding: 0 0 0.5em;\n            }\n\n            h1 {\n                font-size: 1.6em;\n                font-weight: 300;\n                padding-bottom: 1.5em;\n            }\n\n            h2 {\n                font-size: 1.2em;\n                font-weight: 500;\n                color: #D64B4B;\n            }\n\n            table {\n                margin: -6px;\n                border-spacing: 6px;\n                border-collapse: separate;\n            }\n\n           section {\n                padding-bottom: 2.5em;\n            }\n\n            .content {\n                padding: 10px;\n                color: #322e2d;\n                background-color: #f8f0ee;\n            }\n        </style>\n    </head>\n\n    <body>\n        <div class=\"content\">\n            <h1>Contact message from Code Mortals website</h1>\n\n            <section>\n                <h2>Introduction</h2>\n                <div>\n                    <table>\n                        <tr>\n                            <td>name:</td>\n                            <td>Automated Test</td>\n                        </tr>\n                        <tr>\n                            <td>email:</td>\n                            <td>test@codemortals.io</td>\n                        </tr>\n                        <tr>\n                            <td>phone:</td>\n                            <td>not provided</td>\n                        </tr>\n                    </table>\n                </div>\n            </section>\n\n            <section>\n                <h2>Message</h2>\n                <div class=\"message\">\n                    \n                        <p>This is an automated test</p>\n                    \n                </div>\n            </section>\n\n            <section>\n                <table>\n                    <tr>\n                        <td width=\"125\">\n                            <img width=\"110\" src=\"https://cdn.codemortals.io/mascot/2.png\" />\n                        </td>\n                        <td>\n                            <table style=\"font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 12px; color: #322E2D\">\n                                <tr>\n                                    <td style=\"font-weight: 700; font-size: 1.25em; padding: 0 0 4px 10px;\">Code Mortals</td>\n                                </tr>\n                                <tr>\n                                    <td style=\"border-left: 4px solid #D64B4B; padding: 2px 0 2px 6px;\">\n                                        <span style=\"font-weight: 300;\">email:</span>\n                                        <a style=\"text-decoration: none; color: #009EAF\" href=\"mailto:team@codemortals.io\" target=\"_blank\">team@codemortals.io</a>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td style=\"border-left: 4px solid #D64B4B; padding: 2px 0 2px 6px;\">\n                                        <span style=\"font-weight: 300;\">website:</span>\n                                        <a style=\"text-decoration: none; color: #009EAF\" href=\"https://codemortals.io\" target=\"_blank\">codemortals.io</a>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td style=\"padding: 16px 0 0;\">\n                                        <a href=\"https://twitter.com/codemortals\"><img width=\"32\" alt=\"twitter\" src=\"https://cdn.codemortals.io/social/twitter.png\"></a>\n                                        <a href=\"https://youtube.com/codemortals\"><img width=\"32\" alt=\"YouTube\" src=\"https://cdn.codemortals.io/social/youtube.png\"></a>\n                                        <a href=\"https://github.com/codemortals\"><img width=\"32\" alt=\"GitHub\" src=\"https://cdn.codemortals.io/social/github.png\"></a>\n                                        <a href=\"https://instagram.com/codemortals/\"><img width=\"32\" alt=\"Instagram\" src=\"https://cdn.codemortals.io/social/instagram.png\"></a>\n                                        <a href=\"https://linkedin.com/company/codemortals\"><img width=\"32\" alt=\"LinkedIn\" src=\"https://cdn.codemortals.io/social/linkedin.png\"></a>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                    </tr>\n                </table>\n            </section>\n        </div>\n    </body>\n</html>\n",
+            "type": "text/html"
+        }
+    ]
+}

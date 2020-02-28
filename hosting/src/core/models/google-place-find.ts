@@ -9,6 +9,6 @@ export interface GooglePlace {
 }
 
 export interface GooglePlaceFind {
-    uid: string;
+    sessionId: string;
     place: GooglePlace;
 }

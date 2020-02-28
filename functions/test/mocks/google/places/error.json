@@ -1,0 +1,4 @@
+{
+    "error_message": "You must use an API key to authenticate each request to Google Maps Platform APIs.",
+    "status": "REQUEST_DENIED"
+}

@@ -1,0 +1,26 @@
+{
+    "html_attributions": [],
+    "result": {
+        "formatted_address": "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA",
+        "geometry": {
+            "location": {
+                "lat": 37.4219999,
+                "lng": -122.0840575
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 37.42495035,
+                    "lng": -122.0798555
+                },
+                "southwest": {
+                    "lat": 37.41967414999999,
+                    "lng": -122.0920887
+                }
+            }
+        },
+        "name": "Googleplex",
+        "place_id": "ChIJj61dQgK6j4AR4GeTYWZsKWw",
+        "url": "https://maps.google.com/?cid=7793879817120868320"
+    },
+    "status": "OK"
+}

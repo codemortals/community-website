@@ -4,6 +4,7 @@ interface GooglePlace {
 }
 
 export interface GooglePlaceSearch {
+    error_message?: string;
     predictions: Array<GooglePlace>;
     status: string;
 }

@@ -1,0 +1,101 @@
+{
+    "predictions": [
+        {
+            "description": "Googleplex, Amphitheatre Parkway, Mountain View, CA, USA",
+            "id": "3a936e96ddcb18b4fa8a2974ebc8876c3108fef2",
+            "matched_substrings": [
+                {
+                    "length": 6,
+                    "offset": 0
+                }
+            ],
+            "place_id": "ChIJj61dQgK6j4AR4GeTYWZsKWw",
+            "reference": "ChIJj61dQgK6j4AR4GeTYWZsKWw",
+            "structured_formatting": {
+                "main_text": "Googleplex",
+                "main_text_matched_substrings": [
+                    {
+                        "length": 6,
+                        "offset": 0
+                    }
+                ],
+                "secondary_text": "Amphitheatre Parkway, Mountain View, CA, USA"
+            },
+            "terms": [
+                {
+                    "offset": 0,
+                    "value": "Googleplex"
+                },
+                {
+                    "offset": 12,
+                    "value": "Amphitheatre Parkway"
+                },
+                {
+                    "offset": 34,
+                    "value": "Mountain View"
+                },
+                {
+                    "offset": 49,
+                    "value": "CA"
+                },
+                {
+                    "offset": 53,
+                    "value": "USA"
+                }
+            ],
+            "types": [
+                "point_of_interest",
+                "establishment"
+            ]
+        },
+        {
+            "description": "Google, 8th Avenue, New York, NY, USA",
+            "id": "2d6a97617736ca04bb027157724083048ad31b20",
+            "matched_substrings": [
+                {
+                    "length": 6,
+                    "offset": 0
+                }
+            ],
+            "place_id": "ChIJ81QWXL9ZwokRXT045fycD8g",
+            "reference": "ChIJ81QWXL9ZwokRXT045fycD8g",
+            "structured_formatting": {
+                "main_text": "Google",
+                "main_text_matched_substrings": [
+                    {
+                        "length": 6,
+                        "offset": 0
+                    }
+                ],
+                "secondary_text": "8th Avenue, New York, NY, USA"
+            },
+            "terms": [
+                {
+                    "offset": 0,
+                    "value": "Google"
+                },
+                {
+                    "offset": 8,
+                    "value": "8th Avenue"
+                },
+                {
+                    "offset": 20,
+                    "value": "New York"
+                },
+                {
+                    "offset": 30,
+                    "value": "NY"
+                },
+                {
+                    "offset": 34,
+                    "value": "USA"
+                }
+            ],
+            "types": [
+                "point_of_interest",
+                "establishment"
+            ]
+        }
+    ],
+    "status": "OK"
+}

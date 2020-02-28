@@ -12,6 +12,7 @@ interface GooglePlace {
 }
 
 export interface GooglePlaceFind {
+    error_message?: string;
     html_attributions: Array<string>;
     result: GooglePlace;
     status: string;
