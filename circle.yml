@@ -1,53 +1,48 @@
 version: 2
 
 jobs:
-  initialise:
-    docker:
-      - image: cypress/base:10
-    steps:
-      - checkout
-      - run: npm install
-      - run: (cd hosting; npm install)
-      - run: (cd functions; npm install)
-      - save_cache:
-          key: dependencies-{{ .Revision }}
-          paths:
-            - node_modules
-            - hosting/node_modules
-            - functions/node_modules
-            - /root/.cache/Cypress
-
   test-api:
     docker:
-      - image: circleci/node:6
+      - image: circleci/node:10
     steps:
       - checkout
-      - restore_cache:
-          key: dependencies-{{ .Revision }}
-      - run: (cd functions; npm run test)
+      - run: |
+          cd functions
+          npm install
+      - run: |
+          cd functions
+          npm run test
       - store_artifacts:
-          path: .coverage
+          path: functions/.coverage
 
   test-ui:
     docker:
       - image: cypress/base:10
     steps:
       - checkout
-      - restore_cache:
-          key: dependencies-{{ .Revision }}
-      - run: (cd hosting; npm run test)
+      - run: |
+          cd hosting
+          npm install
+      - run: |
+          cd hosting
+          npm run test
       - store_artifacts:
-          path: test/videos
+          path: hosting/test/videos
       - store_artifacts:
-          path: test/screenshots
+          path: hosting/test/screenshots
 
   deploy:
     docker:
       - image: cypress/base:10
     steps:
       - checkout
-      - restore_cache:
-          key: dependencies-{{ .Revision }}
+      - run: npm install
+      - run: |
+          cd hosting
+          npm install
+      - run: |
+          cd functions
+          npm install
       - run: sed -i 's|{{ FIREBASE_API_KEY }}|'${FIREBASE_API_KEY}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ APP_ID }}|'${APP_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ AUTH_DOMAIN }}|'${AUTH_DOMAIN}'|g' hosting/src/environments/environment.prod.ts
@@ -56,7 +51,9 @@ jobs:
       - run: sed -i 's|{{ MESSAGE_SENDER_ID }}|'${MESSAGE_SENDER_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ PROJECT_ID }}|'${PROJECT_ID}'|g' hosting/src/environments/environment.prod.ts
       - run: sed -i 's|{{ STORAGE_BUCKET }}|'${STORAGE_BUCKET}'|g' hosting/src/environments/environment.prod.ts
-      - run: (cd hosting; npm run build:prod)
+      - run: |
+          cd hosting
+          npm run build:prod
       - run: npx firebase functions:config:set google.places_key=$GOOGLE_MAPS_SECRET_KEY --token $FIREBASE_KEY
       - run: npx firebase functions:config:set sendgrid.api_key=$SENDGRID_API_KEY --token $FIREBASE_KEY
       - run: npx firebase deploy --project codemortals-website --token $FIREBASE_KEY
@@ -65,13 +62,8 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - initialise
-      - test-api:
-          requires:
-            - initialise
-      - test-ui:
-          requires:
-            - initialise
+      - test-api
+      - test-ui
       - deploy:
           context: website-production
           requires:
