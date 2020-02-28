@@ -7,14 +7,14 @@ import { AuthResolve } from '@cm/services';
 const routes: Routes = [
     {
         path: 'error',
-        loadChildren: './error/error.module#ErrorModule',
+        loadChildren: () => import('./error/error.module').then(m => m.ErrorModule),
         resolve: {
             auth: AuthResolve,
         },
     },
     {
         path: 'account',
-        loadChildren: './account/account.module#AccountModule',
+        loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
         canActivate: [ AuthGuard ],
         resolve: {
             auth: AuthResolve,
@@ -22,14 +22,14 @@ const routes: Routes = [
     },
     {
         path: 'events',
-        loadChildren: './events/events.module#EventsModule',
+        loadChildren: () => import('./events/events.module').then(m => m.EventsModule),
         resolve: {
             auth: AuthResolve,
         },
     },
     {
         path: '',
-        loadChildren: './content/content.module#ContentModule',
+        loadChildren: () => import('./content/content.module').then(m => m.ContentModule),
         resolve: {
             auth: AuthResolve,
         },
