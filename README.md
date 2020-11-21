@@ -6,6 +6,15 @@ Welcome to the Code Mortals Community Website project.
 - Angular
 - Google Cloud Platform
 
+## Setting up project
+
+ **1.** **Fork** this project by clicking the _Fork_ button on top right corner of this page.
+
+ **2.** **Clone** the repository by running following command in [git](https://git-scm.com/):
+ ```sh
+ $ git clone https://github.com/[YOUR-USERNAME]/community-website.git
+ ```
+
 ## Development
 
 - Checkout project
