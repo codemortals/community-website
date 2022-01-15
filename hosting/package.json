@@ -33,7 +33,7 @@
         "@fortawesome/free-solid-svg-icons": "5.12.1",
         "@venzra/bedrock": "0.5.0",
         "firebase": "7.9.1",
-        "marked": "0.8.0",
+        "marked": "4.0.10",
         "normalize.css": "8.0.1",
         "rxjs": "6.5.4",
         "tslib": "1.11.0",
